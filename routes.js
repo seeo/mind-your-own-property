@@ -21,12 +21,13 @@ module.exports = (app, allModels) => {
     app.get('/register', registerController.registerRequestHandler);
     app.post('/register', registerController.registerControllerCallback);
 
-    const loginController = require('./controllers/login')(allModels);
-    app.get('/login', loginController.loginRequestHandler);
-    app.post('/login', loginController.loginControllerCallback);
+    // const loginController = require('./controllers/login')(allModels);
+    // app.get('/login', loginController.loginRequestHandler);
+    // app.post('/login', loginController.loginControllerCallback);
 
-    // const tweedController = require('./controllers/tweed')(allModels);
-    // app.get('/tweed', tweedController.tweed);
-    // app.post('/tweed', tweedController.tweedControllerCallback);
+    //this part is not required for my project, but just keeping here for now
+        // const tweedController = require('./controllers/tweed')(allModels);
+        // app.get('/tweed', tweedController.tweed);
+        // app.post('/tweed', tweedController.tweedControllerCallback);
   
 };

@@ -65,14 +65,16 @@ pool.on('error', function (err) {
 const homeModelsFunction = require('./models/home');
 const homeModelsObject = homeModelsFunction(pool);
 
-const registerModelsFunction = require('./models/register');
-const registerModelsObject = registerModelsFunction(pool);
+// const registerModelsFunction = require('./models/register');
+// const registerModelsObject = registerModelsFunction(pool);
 
-const loginModelsFunction = require('./models/login');
-const loginModelsObject = loginModelsFunction(pool);
+// const loginModelsFunction = require('./models/login');
+// const loginModelsObject = loginModelsFunction(pool);
 
-// const tweedModelsFunction = require('./models/tweed');
-// const tweedModelsObject = tweedModelsFunction(pool);
+
+//this part is not required for my project, but just keeping here for now
+    // const tweedModelsFunction = require('./models/tweed');
+    // const tweedModelsObject = tweedModelsFunction(pool);
 
 /*
  * ===================================================
@@ -101,8 +103,9 @@ module.exports = {
      */
 
     homeModelsObject: homeModelsObject,
-    registerModelsObject: registerModelsObject,
-    loginModelsObject: loginModelsObject,
+    // registerModelsObject: registerModelsObject,
+    // loginModelsObject: loginModelsObject,
     
-    // tweedModelsObject: tweedModelsObject
+    //this part is not required for my project, but just keeping here for now
+        // tweedModelsObject: tweedModelsObject
 };
