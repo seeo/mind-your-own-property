@@ -67,8 +67,8 @@ const homeModelsObject = homeModelsFunction(pool);
 const registerModelsFunction = require('./models/register');
 const registerModelsObject = registerModelsFunction(pool);
 
-// const loginModelsFunction = require('./models/login');
-// const loginModelsObject = loginModelsFunction(pool);
+const loginModelsFunction = require('./models/login');
+const loginModelsObject = loginModelsFunction(pool);
 
 
 //this part is not required for my project, but just keeping here for now
@@ -102,7 +102,7 @@ module.exports = {
      */
     homeModelsObject: homeModelsObject,
     registerModelsObject: registerModelsObject,
-    // loginModelsObject: loginModelsObject,
+    loginModelsObject: loginModelsObject,
     
     //this part is not required for my project, but just keeping here for now
         // tweedModelsObject: tweedModelsObject
