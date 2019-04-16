@@ -61,12 +61,11 @@ pool.on('error', function (err) {
  * ===================================================
  */
 
-
 const homeModelsFunction = require('./models/home');
 const homeModelsObject = homeModelsFunction(pool);
 
-// const registerModelsFunction = require('./models/register');
-// const registerModelsObject = registerModelsFunction(pool);
+const registerModelsFunction = require('./models/register');
+const registerModelsObject = registerModelsFunction(pool);
 
 // const loginModelsFunction = require('./models/login');
 // const loginModelsObject = loginModelsFunction(pool);
@@ -101,9 +100,8 @@ module.exports = {
     /*
      * ADD APP MODELS HERE
      */
-
     homeModelsObject: homeModelsObject,
-    // registerModelsObject: registerModelsObject,
+    registerModelsObject: registerModelsObject,
     // loginModelsObject: loginModelsObject,
     
     //this part is not required for my project, but just keeping here for now
