@@ -1,0 +1,102 @@
+body {
+	background-color: beige;
+	font-family: helvetica;
+    margin: 50px;
+}
+
+header {
+	color: brown;
+}
+
+input {
+	display: block;
+	margin-bottom: 30px;
+}
+
+.logout-form {
+	color: brown;
+	display: inline-block;
+	word-spacing: 1em;
+}
+
+.logout-buttons {
+	display: inline;
+}
+
+.resize-img {
+	max-width: 50%;
+	max-height: 50%;
+}
+
+h3 {
+	color: brown;
+	font-family: Helvetica, sans-serif;
+	font-weight: lighter;
+	text-decoration: none;
+	/*letter-spacing: 1.5px;
+	word-spacing: 2px; */
+}
+
+h4 {
+	color: brown;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+
+h4:hover {
+	font-weight: bold;
+}
+
+p {
+	color: rgb(242, 159, 140);
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+nav a {
+	color: lightgrey;
+	font-weight: lighter;
+	font-family: sans-serif;
+	margin-right: auto;
+}
+
+article h3 {
+	color: brown;
+	font-family: sans-serif;
+	font-size: 30px;
+	font-weight: lighter;
+}
+
+article h2 a {
+	color: brown;
+	text-decoration: none;
+}
+
+article h4 a {
+	color: brown;
+	font-family: arial;
+	float: right;
+	text-decoration: none;
+}
+
+article p {
+	color: grey;
+	/*grey */
+	font-family: arial;
+	line-height: 150%;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+article p::first-letter {
+	/*Google Drop Caps*/
+	color: brown;
+	/*grey */
+	font-size: 500%;
+	font-family: arial;
+	font-weight: lighter;
+}

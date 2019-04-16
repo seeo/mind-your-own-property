@@ -10,8 +10,9 @@ module.exports = (dbPoolInstance) => {
     let login = (data, loginSuccessfulCallback, loginUnsuccessfulCallback) => {
         let usernameInput = data.username;
         let passwordInput = sha256(data.password + SALT);
+        let userId; //init userId on global scope first;
         let queryString = `SELECT * FROM users WHERE username='${data.username}';`;
-        let userIdNumber = `SELECT id FROM users WHERE username='${data.username}';`;
+        // let userIdNumberQuery = `SELECT id FROM users WHERE username='${data.username}';`;
         dbPoolInstance.query(queryString, (error, result) => {
             if (error) {
                 console.log("login query error", error);
@@ -20,10 +21,20 @@ module.exports = (dbPoolInstance) => {
                     if (result.rows[0].password === passwordInput) {
                         //login successful
                         let hashedUsername = sha256(SALT + data.username);
+                        userId = result.rows[0].id;
+                        // dbPoolInstance.query(userIdNumberQuery, (error, result)=>{
+                        //     if (error) {
+                        //         console.log("userIdNumber query errrrror...", error);
+                        //     } else{
+                        //         console.log("printing out userIddddd hopefullyyy....");
+                        //         console.log(userId);
+                        //         userId = result.rows[0];                            
+                        //     }
+                        // })
                         // invoke callback function with results after query has executed
                         console.log("login result.rows: ");
                         console.log(result.rows);
-                        loginSuccessfulCallback(userIdNumber, usernameInput, hashedUsername);
+                        loginSuccessfulCallback(userId, usernameInput, hashedUsername);
                     } else {
                         //wrong password entered
                         loginUnsuccessfulCallback();

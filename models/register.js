@@ -9,7 +9,7 @@ module.exports = (dbPoolInstance) => {
     // `dbPoolInstance` is accessible within this function scope
     let registerNewUser = (data, callback) => {
         let hash = sha256(data.password + SALT);
-        let values = [data.username, hash];
+        let values = [data.username, hash, data.email];
         let queryString = 'INSERT INTO users (username, password, email) VALUES ($1,$2,$3) RETURNING *;';
 
         dbPoolInstance.query(queryString, values, (error, result) => {

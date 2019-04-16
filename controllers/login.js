@@ -12,7 +12,7 @@ module.exports = (allModels) => {
             username: request.body.username,
             password: request.body.password
         };
-        const loginSuccessfulCallback = (usernameInput, hashedUsername) => {
+        const loginSuccessfulCallback = (userIdNumber, usernameInput, hashedUsername) => {
             console.log("login controller successful: ");
             response.cookie('userId', userIdNumber);
             response.cookie('username', usernameInput);
