@@ -25,6 +25,10 @@ module.exports = (app, allModels) => {
     app.get('/login', loginController.loginRequestHandler);
     app.post('/login', loginController.loginControllerCallback);
 
+    // const logoutController = require('./controllers/logout')(allModels);
+    // app.get('/logout', logoutController.logoutRequestHandler);
+    // app.post('/logout', logoutController.logoutControllerCallback);
+
     //this part is not required for my project, but just keeping here for now
         // const tweedController = require('./controllers/tweed')(allModels);
         // app.get('/tweed', tweedController.tweed);
