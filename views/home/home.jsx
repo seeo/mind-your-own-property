@@ -67,6 +67,17 @@ class Home extends React.Component {
         });
         return (
             <Layout title="Home">
+            <header>
+                <div class="button-container" style={{ display: 'inline-block', position: 'absolute', right: '5%'}}>
+                    <form style={{ display: 'inline-block', margin: '0 5px' }} action="/login">
+                        <input type="submit" value="Log in" />
+                    </form>
+                    <form style={{ display: 'inline-block', margin: '0 5px' }} action="/register">
+                        <input type="submit" value="Sign Up" />
+                    </form>
+                </div>
+                <h2>Mind Your Own Property</h2>
+            </header>
                 <div>
                     {allHousesStatsArr}
                 </div>
