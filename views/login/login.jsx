@@ -7,12 +7,11 @@ class Login extends React.Component {
                     <h3>Sign in to your MYOP account</h3>
                         <form method="post" action="/login" >
                             <input type="text" name="username" placeholder = "username" />
-                            <input type="password" name="password" placeholder = "password" />
-                            <input type="submit" value="Submit" />
+                            <input type="password" name="password" placeholder = "password" />       
+                            <input type="submit" value="Submit"/>
                         </form>
-                        <form method = "get" action = "/" >
-                            <input type = "submit" value = "Cancel" />
-                        </form>
+                    <h6><a href="/register">Sign up</a> for an account!</h6>
+                        
                 </Layout>);
     }
 }

@@ -10,9 +10,7 @@ class RegisterNewUser extends React.Component {
                         <input type = "email" name = "email" placeholder = "Sign up with an email"/>
                         <input type = "submit" value = "Submit"/>
                     </form>
-                    <form method = "get" action = "/">
-                        <input type = "submit" value = "Cancel"/>
-                    </form>
+                    <h6><a href="/login">Log in</a> here if you already have an account</h6>
                  </Layout>);
     }
 }

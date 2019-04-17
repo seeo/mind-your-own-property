@@ -25,8 +25,8 @@ module.exports = (app, allModels) => {
     app.get('/login', loginController.loginRequestHandler);
     app.post('/login', loginController.loginControllerCallback);
 
-    // const logoutController = require('./controllers/logout')(allModels);
-    // app.get('/logout', logoutController.logoutRequestHandler);
+    const logoutController = require('./controllers/logout')(allModels);
+    app.get('/logout', logoutController.logoutRequestHandler);
     // app.post('/logout', logoutController.logoutControllerCallback);
 
     //this part is not required for my project, but just keeping here for now
