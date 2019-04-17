@@ -27,6 +27,6 @@ module.exports = (dbPoolInstance) => {
         });
     };
     return {
-        registerModelFunction: registerNewUser
+        registerNewUser,
     };
 };

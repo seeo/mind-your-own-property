@@ -31,7 +31,7 @@ module.exports = (allModels) => {
      * ===========================================
      */
     return {
-        loginRequestHandler: loginRequestHandler,
-        loginControllerCallback: loginControllerCallback
+        loginRequestHandler,
+        loginControllerCallback,
     };
 }

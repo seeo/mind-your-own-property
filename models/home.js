@@ -5,12 +5,15 @@
  */
 module.exports = (dbPoolInstance) => {
     // `dbPoolInstance` is accessible within this function scope
-    let getAllProperties = (callback) => {
+    let getAllProperties = (callback, userIdFromCookies) => {
+
+        console.log("printing out the userIdFromCookies in the models home page...");
+        console.log(userIdFromCookies);
         // let username = userNameCallback();
         // console.log("printing out the userId value response cookieeee in modelsss...");
         // console.log(userIdFromCookies);
 
-        let queryString = `SELECT * FROM properties where properties.user_id = 1;`;
+        let queryString = `SELECT * FROM properties where properties.user_id = ${userIdFromCookies};`;
         dbPoolInstance.query(queryString, (error, result) => {
             if (error) {
                 console.log("home query error", error);
@@ -22,7 +25,22 @@ module.exports = (dbPoolInstance) => {
             }
         });
     };
+    //so we test below what exactly is being done when we do not assign a property name to the getAllProperties function as in 'a';
+    //in case a, the compiler/computer gives the same property name as our getAllProperties function
+    //and we also test below what exactly is being done when we assign a property name to the getAllProperties function as in 'b';
+    //in case b, the computer gives the property name we assigned to the getAllProperties function, which can be confusing...
+    // let a = {
+    //     getAllProperties,                                
+    // };
+
+    // let b = {
+    //     modelsomething: getAllProperties,
+    // };
+    // console.log("here");
+    // console.log(a);
+    // console.log(b);
+    //end of test
     return {
-        homeModelFunction: getAllProperties
+        getAllProperties,
     };
 };

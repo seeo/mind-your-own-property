@@ -12,7 +12,8 @@ module.exports = (allModels) => {
 
         const data = {
             username: request.body.username,
-            password: request.body.password
+            password: request.body.password,
+            email: request.body.email
         };
 
         const resultCallback = (result) => {
@@ -21,7 +22,7 @@ module.exports = (allModels) => {
             console.log(result);
             response.render('./register/registerSuccessful');
         };
-        allModels.registerModelsObject.registerModelFunction(data, resultCallback);
+        allModels.registerModelsObject.registerNewUser(data, resultCallback);
     };
     /**
      * ===========================================
@@ -29,7 +30,7 @@ module.exports = (allModels) => {
      * ===========================================
      */
     return {
-        registerControllerCallback: registerControllerCallback,
-        registerRequestHandler: registerRequestHandler
+        registerControllerCallback,
+        registerRequestHandler,
     };
 }

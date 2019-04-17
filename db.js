@@ -70,6 +70,9 @@ const registerModelsObject = registerModelsFunction(pool);
 const loginModelsFunction = require('./models/login');
 const loginModelsObject = loginModelsFunction(pool);
 
+// const logoutModelsFunction = require('./models/logout');
+// const logoutModelsObject = logoutModelsFunction(pool);
+
 
 //this part is not required for my project, but just keeping here for now
     // const tweedModelsFunction = require('./models/tweed');
@@ -95,14 +98,14 @@ module.exports = {
     },
 
     // get a reference to end the connection pool at server end
-    pool: pool,
+    pool,
 
     /*
      * ADD APP MODELS HERE
      */
-    homeModelsObject: homeModelsObject,
-    registerModelsObject: registerModelsObject,
-    loginModelsObject: loginModelsObject,
+    homeModelsObject,
+    registerModelsObject,
+    loginModelsObject,
     
     //this part is not required for my project, but just keeping here for now
         // tweedModelsObject: tweedModelsObject
