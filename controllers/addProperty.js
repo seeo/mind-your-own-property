@@ -6,7 +6,13 @@ module.exports = (allModels) => {
      */
 
     let addPropertyRequestHandler = (request, response) => {
-        response.render("./property/add_property");
+            if (request.cookies.userId != undefined){
+            response.render("./property/add_property");
+        }else{
+            //please log in
+            console.log("user not logged in at addProp controller, no cookies detected, redirecting to login page");
+            response.redirect('/login');
+        }
     }
     let addPropertyControllerCallback = (request, response) => {
 
@@ -22,8 +28,9 @@ module.exports = (allModels) => {
 
         const resultCallback = (result) => {
             console.log("add property controller starting upppp:... ");
-            console.log("printing out the result: ...");
+            console.log("printing out the result in add prop controller: ...");
             console.log(result);
+            //bring user to the home page and display all properties once new property is added
             response.redirect('/');
         };
         allModels.addPropertyModelsObject.addNewProperty(data, resultCallback);
