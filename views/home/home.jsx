@@ -16,13 +16,13 @@ class Home extends React.Component {
             }
         }
         let countDown = daysToNextPayment(dateOfPayment);
-        let className = 'rounded-circle text-dark';
+        let className = 'rounded-pill text-dark';
         if (countDown > 5){
-            className = 'bg-success rounded-circle text-white'; //green color
+            className = 'bg-success rounded-pill text-white'; //green color
         } else if (countDown > 1 && countDown <=5) {
-            className = 'bg-warning rounded-circle text-white'; //orange color
+            className = 'bg-warning rounded-pill text-white'; //orange color
         } else {
-            className = 'bg-danger rounded-circle text-white'; // red color
+            className = 'bg-danger rounded-pill text-white'; // red color
         }
         //make the countDown take up two digits worth of space, so that the bootstrap rounded circle is obvious
         if (countDown<10){
