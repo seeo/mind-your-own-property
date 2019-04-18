@@ -15,15 +15,20 @@ class Home extends React.Component {
                 return (dateOfCollection - dateNow) / dayInMS;
             }
         }
-        const countDown = daysToNextPayment(dateOfPayment);
-        let className = 'rounded-circle text-white ';
+        let countDown = daysToNextPayment(dateOfPayment);
+        let className = 'rounded-circle text-dark';
         if (countDown > 5){
-            className = 'bg-success'; //green color
+            className = 'bg-success rounded-circle text-white'; //green color
         } else if (countDown > 1 && countDown <=5) {
-            className = 'bg-warning'; //orange color
+            className = 'bg-warning rounded-circle text-white'; //orange color
         } else {
-            className = 'bg-danger'; // red color
+            className = 'bg-danger rounded-circle text-white'; // red color
         }
+        //make the countDown take up two digits worth of space, so that the bootstrap rounded circle is obvious
+        if (countDown<10){
+            countDown = "0"+countDown;
+        }
+
         return (
             <span
                 className={className}
@@ -33,12 +38,13 @@ class Home extends React.Component {
                     height: '30px',
                 }}
             >
-                {dateOfPayment}
+                {countDown}
             </span>
         )
     }
 
     render() {
+        
         console.log("Creating a loop now for homeeeeee page of houses owned by userrrr/landlord..");
         let allHousesStatsArr = this.props.house.map(thisHouseStats => {
             let id = parseInt(thisHouseStats.id);
@@ -46,10 +52,18 @@ class Home extends React.Component {
             let address = thisHouseStats.address;
             let photo = thisHouseStats.photo_url;
             let rental_mth = thisHouseStats.rental_mth;
-            let day_credit = thisHouseStats.day_credit;
+            let day_credit;
+                //just for asthetics purpose, we put a zero in front of the number if it is a single digit;
+                if (thisHouseStats.day_credit<10){
+                    day_credit = "0"+thisHouseStats.day_credit;
+                }else{
+                    day_credit = thisHouseStats.day_credit;
+                }
             let bank_name = thisHouseStats.bank_name;
-            console.log("printing out data type of day_credit: ...");
-            console.log(typeof(day_credit));
+            
+            
+                console.log("printing out data type of day_credit: ...");
+                console.log(typeof(day_credit));
             return (
                 <div className="card" stylename={"width: 18rem;"}>
                     <img className="card-img-top" src={photo} alt="Property's image"/>
@@ -59,18 +73,19 @@ class Home extends React.Component {
                         </a>
                         <h5>Address: {address}</h5>
                         <h5>Rental per month (S$): {rental_mth}</h5>
-                        <h5>Rent comes in on day (of the month): {this.renderDayCredit(day_credit)}</h5>
-                        <h5>Rent gets credited into bank: {bank_name}</h5>
+                        <h5>Rent due on day (of the month): {day_credit}</h5>
+                        <h5>Days to next payment: {this.renderDayCredit(day_credit)}</h5>
+                        <h5>Rent credited into: {bank_name}</h5>
                     </div>
                 </div>
             );
         });
         return (
-            <Layout title="MYOP - Home">
+            <Layout title = "MYOP - Home">
             <header>
-                <div class="button-container" style={{ display: 'inline-block', position: 'absolute', right: '5%'}}>
-                    <form style={{ display: 'inline-block', margin: '0 5px' }} action = "/logout">
-                        <input type="submit" value="Log out" />
+                <div class = "button-container" style = {{ display: 'inline-block', position: 'absolute', right: '5%'}}>
+                    <form style = {{ display: 'inline-block', margin: '0 5px' }} action = "/logout">
+                        <input type = "submit" value = "Log out" />
                     </form>
                 </div>
                 <h2>Mind Your Own Property</h2>
