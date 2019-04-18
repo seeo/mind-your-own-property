@@ -13,7 +13,7 @@ module.exports = (dbPoolInstance) => {
         // console.log("printing out the userId value response cookieeee in modelsss...");
         // console.log(userIdFromCookies);
 
-        let queryString = `SELECT * FROM properties where properties.user_id = ${userIdFromCookies};`;
+        let queryString = `SELECT * FROM properties where properties.user_id = '${userIdFromCookies}';`;
         dbPoolInstance.query(queryString, (error, result) => {
             if (error) {
                 console.log("home query error", error);

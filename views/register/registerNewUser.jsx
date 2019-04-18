@@ -2,7 +2,7 @@ const React = require('react');
 const Layout = require('../layout');
 class RegisterNewUser extends React.Component {
     render() {
-        return (<Layout title = "New User">
+        return (<Layout title = "MYOP - Sign up">
                     <h5>Create new user</h5>
                     <form method = "post" action = "/register">
                         <input type = "text" name = "username" placeholder = "Choose your username"/>

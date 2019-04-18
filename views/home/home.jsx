@@ -66,7 +66,7 @@ class Home extends React.Component {
             );
         });
         return (
-            <Layout title="Home">
+            <Layout title="MYOP - Home">
             <header>
                 <div class="button-container" style={{ display: 'inline-block', position: 'absolute', right: '5%'}}>
                     <form style={{ display: 'inline-block', margin: '0 5px' }} action = "/logout">
