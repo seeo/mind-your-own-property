@@ -76,7 +76,6 @@ const addPropertyModelsObject = addPropertyModelsFunction(pool);
 const viewPropertyModelsFunction = require('./models/viewProperty');
 const viewropertyModelsObject = viewPropertyModelsFunction(pool);
 
-
 //this part is not required for my project, but just keeping here for now
     // const tweedModelsFunction = require('./models/tweed');
     // const tweedModelsObject = tweedModelsFunction(pool);
@@ -92,17 +91,13 @@ const viewropertyModelsObject = viewPropertyModelsFunction(pool);
  * ===================================================
  * ===================================================
  */
-
-
 module.exports = {
     //make queries directly from here
     queryInterface: (text, params, callback) => {
         return pool.query(text, params, callback);
     },
-
     // get a reference to end the connection pool at server end
     pool,
-
     /*
      * ADD APP MODELS HERE
      */
@@ -110,6 +105,7 @@ module.exports = {
     registerModelsObject,
     loginModelsObject,
     addPropertyModelsObject,
+    viewropertyModelsObject,
     // logoutModelsObject
     //this part is not required for my project, but just keeping here for now
         // tweedModelsObject: tweedModelsObject
