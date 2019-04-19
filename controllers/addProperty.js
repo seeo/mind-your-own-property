@@ -15,7 +15,7 @@ module.exports = (allModels) => {
         }
     }
     let addPropertyControllerCallback = (request, response) => {
-
+   //TODO : should i include a cookies checker here?
         const data = {
             name: request.body.name,
             address: request.body.address,
