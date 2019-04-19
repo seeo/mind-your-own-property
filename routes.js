@@ -29,7 +29,7 @@ module.exports = (app, allModels) => {
     app.get('/logout', logoutController.logoutRequestHandler);
     // app.post('/logout', logoutController.logoutControllerCallback);
 
-    const addPropertyController = require('./controllers/add_property')(allModels);
+    const addPropertyController = require('./controllers/addproperty')(allModels);
     app.get('/add_property', addPropertyController.addPropertyRequestHandler);
     //once property is added via the add_property form, and click submit, the user is redirected to home page
     app.post('/add_property', addPropertyController.addPropertyControllerCallback); 

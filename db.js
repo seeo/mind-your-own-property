@@ -70,8 +70,11 @@ const registerModelsObject = registerModelsFunction(pool);
 const loginModelsFunction = require('./models/login');
 const loginModelsObject = loginModelsFunction(pool);
 
-// const logoutModelsFunction = require('./models/logout');
-// const logoutModelsObject = logoutModelsFunction(pool);
+const addPropertyModelsFunction = require('./models/addProperty');
+const addPropertyModelsObject = addPropertyModelsFunction(pool);
+
+const viewPropertyModelsFunction = require('./models/viewProperty');
+const viewropertyModelsObject = viewPropertyModelsFunction(pool);
 
 
 //this part is not required for my project, but just keeping here for now

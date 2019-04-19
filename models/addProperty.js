@@ -11,11 +11,8 @@ module.exports = (dbPoolInstance) => {
 
         dbPoolInstance.query(queryString, values, (error, result) => {
             if (error) {
-
                 console.log("add property query error in models", error);
-
             } else {
-
                 // invoke callback function with results after query has executed
                 console.log("printing out the add property result.rows in models: ...");
                 console.log(result.rows);

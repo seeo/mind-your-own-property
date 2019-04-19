@@ -83,7 +83,7 @@ class Home extends React.Component {
         return (
             <Layout title = "MYOP - Home">
             <header>
-                <div class = "button-container" style = {{ display: 'inline-block', position: 'absolute', right: '5%'}}>
+                <div className = "button-container" style = {{ display: 'inline-block', position: 'absolute', right: '5%'}}>
                     <form style = {{ display: 'inline-block', margin: '0 5px' }} action = "/logout">
                         <input type = "submit" value = "Log out" />
                     </form>
