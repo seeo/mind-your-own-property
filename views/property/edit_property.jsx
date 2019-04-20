@@ -7,7 +7,7 @@ class EditProperty extends React.Component {
         let propertyId = this.props.house[0].id;
         let name = this.props.house[0].name;
         let address = this.props.house[0].address;
-        let photo = this.props.house[0].photo;
+        let photo = this.props.house[0].photo_url;
         let rental_mth = this.props.house[0].rental_mth;
         let day_credit = this.props.house[0].day_credit;
         let bank_name = this.props.house[0].bank_name;
@@ -19,19 +19,19 @@ class EditProperty extends React.Component {
             <h3>Edit your property</h3>
             <form method = "post" action = {actionAttributePut}>
                 <h5>Name</h5>
-                <input type = "text" name = "name" defaultValue = {name} />
-                <h5>Address</h5>
-                <input type = "text" name = "address" defaultValue = {address} />
-                <h5>Photo Url</h5>
-                <input type = "text" name = "photo_url" defaultValue = {photo} />
-                <h5>Rental per month (S$)</h5>
-                <input type = "number" name = "rental_mth" defaultValue = {rental_mth} />
-                <h5>Rental is due on this day of the month</h5>
-                <input type = "number" name = "day_credit" defaultValue = {day_credit} />
-                <h5>Rent gets credited into this bank</h5>
-                <input type = "text" name = "bank_name" defaultValue = {bank_name} />
+                    <input type = "text" name = "name" placeholder = {name}/>
+                    <h5>Address</h5>
+                    <input type = "text" name = "address" placeholder = {address} />
+                    <h5>Photo Url</h5>
+                    <input type = "text" name = "photo_url" placeholder = {photo} />
+                    <h5>Rental per month (S$)</h5>
+                    <input type = "number" name = "rental_mth" placeholder = {rental_mth}/>
+                    <h5>Rental is due on this day of the month</h5>
+                    <input type = "number" name = "day_credit" placeholder = {day_credit} />
+                    <h5>Rent gets credited into bank</h5>
+                    <input type = "text" name = "bank_name" placeholder = {bank_name} />
                 <input type = "submit" defaultValue = "Submit" />
-                <input type = "submit" defaultValue = "Cancel" formaction = {actionAttributeCancel}/>
+                <input type = "submit" defaultValue = "Cancel" formAction = {actionAttributeCancel}/>
             </form>
         </Layout>);
     }
