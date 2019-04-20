@@ -37,6 +37,11 @@ module.exports = (app, allModels) => {
     const viewPropertyController = require('./controllers/viewProperty')(allModels);
     app.get('/property/:id', viewPropertyController.viewPropertyControllerCallback);
 
+    const editPropertyController = require('./controllers/editProperty')(allModels);
+    app.get('/property/:id/edit', editPropertyController.editPropertyRequestHandler);
+    app.put('/property/:id/', editPropertyController.editPropertyControllerCallback);
+
+
     //this part is not required for my project, but just keeping here for now
         // const tweedController = require('./controllers/tweed')(allModels);
         // app.get('/tweed', tweedController.tweed);

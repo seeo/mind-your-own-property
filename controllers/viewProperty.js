@@ -17,7 +17,7 @@ module.exports = (allModels) => {
     // }
     let viewPropertyControllerCallback = (request, response) => {
         let propertyId = parseInt(request.params.id);
-        console.log("printing out the request.params.id: ...")
+        console.log("printing out the request.params.id in viewProperty controller callllllBacckk: ...")
         console.log(propertyId);
         let userIdFromCookies;
         if (request.cookies.userId === undefined) {

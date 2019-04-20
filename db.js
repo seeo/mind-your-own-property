@@ -76,6 +76,9 @@ const addPropertyModelsObject = addPropertyModelsFunction(pool);
 const viewPropertyModelsFunction = require('./models/viewProperty');
 const viewPropertyModelsObject = viewPropertyModelsFunction(pool);
 
+const editPropertyModelsFunction = require('./models/editProperty');
+const editPropertyModelsObject = editPropertyModelsFunction(pool);
+
 //this part is not required for my project, but just keeping here for now
     // const tweedModelsFunction = require('./models/tweed');
     // const tweedModelsObject = tweedModelsFunction(pool);
@@ -106,6 +109,7 @@ module.exports = {
     loginModelsObject,
     addPropertyModelsObject,
     viewPropertyModelsObject,
+    editPropertyModelsObject,
     // logoutModelsObject
     //this part is not required for my project, but just keeping here for now
         // tweedModelsObject: tweedModelsObject

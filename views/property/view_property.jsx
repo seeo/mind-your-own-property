@@ -68,9 +68,9 @@ class ViewProperty extends React.Component {
                 <div className="card" stylename={"width: 18rem;"}>
                     <img className="card-img-top" src={photo} alt="Property's image" />
                     <div className="card-body">
-                        <a href={''}>
+                        
                             <h4 className="card-title">{name}</h4>
-                        </a>
+                        
                         <h5>Address: {address}</h5>
                         <h5>Rental per month (S$): {rental_mth}</h5>
                         <h5>Rent due on day (of the month): {day_credit}</h5>
