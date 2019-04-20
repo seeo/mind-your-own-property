@@ -6,13 +6,24 @@ module.exports = (allModels) => {
      */
 
     let editPropertyRequestHandler = (request, response) => {
-        if (request.cookies.userId != undefined) {
-            response.render("./property/edit_property");
-        } else {
-            //please log in
-            console.log("user not logged in at addProp controller, no cookies detected, redirecting to login page");
-            response.redirect('/login');
-        }
+        let resultCallback; 
+        let userIdFromCookies;
+        let propertyId = parseInt(request.params.id);
+            if (request.cookies.userId != undefined) {
+                userIdFromCookies = request.cookies.userId;
+                resultCallback = (result) => {
+                    console.log("edit property request handler starting upppp:... ");
+                    console.log("printing out the result of getProperty in edit prop controller: ...");
+                    console.log(result);
+                    //bring user to the home page and display all properties once new property is added
+                    response.render('./property/edit_property', {house: result});
+                };
+                }else{
+                //please log in
+                console.log("user not logged in at addProp controller, no cookies detected, redirecting to login page");
+                response.redirect('/login');
+            }
+        allModels.editPropertyModelsObject.getProperty(resultCallback, userIdFromCookies, propertyId);
     }
     let editPropertyControllerCallback = (request, response) => {
         let userIdFromCookies;
@@ -36,7 +47,7 @@ module.exports = (allModels) => {
             console.log("printing out the result in edit prop controller: ...");
             console.log(result);
             //bring user to the home page and display all properties once new property is added
-            response.render('/property/view_property');
+            response.render('/property/edit_property');
         };
         allModels.editPropertyModelsObject.editProperty(data, resultCallback, userIdFromCookies, propertyId);
     };
