@@ -81,7 +81,7 @@ class ViewProperty extends React.Component {
             );
         });
         return (
-            <Layout title="MYOP - Home">
+            <Layout title="MYOP - View">
                 <header>
                     <div className="button-container" style={{ display: 'inline-block', position: 'absolute', right: '5%' }}>
                         <form style={{ display: 'inline-block', margin: '0 5px' }} action="/logout">

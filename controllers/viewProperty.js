@@ -17,6 +17,8 @@ module.exports = (allModels) => {
     // }
     let viewPropertyControllerCallback = (request, response) => {
         let propertyId = parseInt(request.params.id);
+        console.log("printing out the request.params.id: ...")
+        console.log(propertyId);
         let userIdFromCookies;
         if (request.cookies.userId === undefined) {
             //please log in to view your properties (need to capture cookie data to identify user);
@@ -24,10 +26,13 @@ module.exports = (allModels) => {
             response.redirect('/login');
         }else{
             userIdFromCookies = request.cookies.userId;
+            console.log("printing out the request.cookies.userId: ...")
+            console.log(userIdFromCookies);
             const resultCallback = (result) => {
                 console.log("view prop controller starting upppp:... ");
                 console.log("printing out the result in view prop controller: ...");
                 console.log(result);
+                
                 //bring user to the home page and display all properties once new property is added
                 response.render('./property/view_property', {house: result});
             };

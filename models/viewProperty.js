@@ -6,7 +6,7 @@
 module.exports = (dbPoolInstance) => {
     // `dbPoolInstance` is accessible within this function scope
     let viewProperty = (callback, userIdFromCookies, propertyId) => {
-        let queryString = `SELECT * FROM properties WHERE (properties.user_id = '${userIdFromCookies}'AND properties.id ='${propertyId}');`;
+        let queryString = `SELECT * FROM properties WHERE (properties.user_id = '${userIdFromCookies}'AND properties.id = ${propertyId});`;
         dbPoolInstance.query(queryString, (error, result) => {
             if (error) {
                 console.log("view property query error in models", error);
