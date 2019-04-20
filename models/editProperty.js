@@ -22,7 +22,7 @@ module.exports = (dbPoolInstance) => {
 
     let editProperty = (data, callback, userIdFromCookies, propertyId) => {
         let values = [data.name, data.address, data.photo, data.rental_mth, data.day_credit, data.bank_name];
-        let queryString = `UPDATE properties SET (name, address, photo_url, rental_mth, day_credit, bank_name)=VALUES ($1,$2,$3,$4,$5,$6) WHERE properties.user_id='${userIdFromCookies}' AND properties.id='${propertyId}' RETURNING *;`;
+        let queryString = `UPDATE properties SET (name, address, photo_url, rental_mth, day_credit, bank_name) = VALUES ($1,$2,$3,$4,$5,$6) WHERE properties.user_id='${userIdFromCookies}' AND properties.id='${propertyId}' RETURNING *;`;
 
         dbPoolInstance.query(queryString, values, (error, result) => {
             if (error) {

@@ -15,7 +15,7 @@ module.exports = (allModels) => {
                     console.log("edit property request handler starting upppp:... ");
                     console.log("printing out the result of getProperty in edit prop controller: ...");
                     console.log(result);
-                    //bring user to the home page and display all properties once new property is added
+                    //bring user to the home page and   display all properties once new property is added
                     response.render('./property/edit_property', {house: result});
                 };
                 }else{

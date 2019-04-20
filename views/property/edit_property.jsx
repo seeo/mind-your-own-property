@@ -23,7 +23,7 @@ class EditProperty extends React.Component {
                     <h5>Address</h5>
                     <input type = "text" name = "address" placeholder = {address} />
                     <h5>Photo Url</h5>
-                    <input type = "text" name = "photo_url" placeholder = {photo} />
+                    <input type = "text" name = "photo" placeholder = {photo} />
                     <h5>Rental per month (S$)</h5>
                     <input type = "number" name = "rental_mth" placeholder = {rental_mth}/>
                     <h5>Rental is due on this day of the month</h5>
