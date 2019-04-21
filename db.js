@@ -110,7 +110,7 @@ module.exports = {
     addPropertyModelsObject,
     viewPropertyModelsObject,
     editPropertyModelsObject,
-    deletePropertyModelsObject,
+    // deletePropertyModelsObject,
     // logoutModelsObject
     //this part is not required for my project, but just keeping here for now
         // tweedModelsObject: tweedModelsObject
