@@ -13,7 +13,7 @@ class EditProperty extends React.Component {
         let bank_name = this.props.house[0].bank_name;
 
         let actionAttributePut = `/property/${propertyId}?_method=PUT`;
-        let actionAttributeCancel = `/property/${propertyId}`;
+        let actionAttributeCancel = `/property/${propertyId}?_method=GET`;
 
         return (<Layout title = "MYOP - Edit Property">
             <h3>Edit your property</h3>

@@ -46,7 +46,7 @@ class ViewProperty extends React.Component {
     render() {
 
         console.log("Creating a loop now for homeeeeee page of houses owned by userrrr/landlord..");
-        let allHousesStatsArr = this.props.house.map(thisHouseStats => {
+        let allHouseStatsArr = this.props.house.map(thisHouseStats => {
             let id = parseInt(thisHouseStats.id);
             let name = thisHouseStats.name;
             let address = thisHouseStats.address;
@@ -64,13 +64,17 @@ class ViewProperty extends React.Component {
 
             console.log("printing out data type of day_credit: ...");
             console.log(typeof (day_credit));
+
+            // let actionAttributePut = `/property/${propertyId}?_method=PUT`;
+            // { actionAttributePut }
+
             return (
-                <div className="card" stylename={"width: 18rem;"}>
-                    <img className="card-img-top" src={photo} alt="Property's image" />
-                    <div className="card-body">
+                <div className = "card" stylename={"width: 18rem;"}>
+                    <img className = "card-img-top" src={photo} alt="Property's image" />
+                    <div className = "card-body">
                         <div className = "view-prop-buttons-container"> 
-                            <h4 className="card-title">{name}</h4>
-                            <a href="#" class="btn btn-secondary">Go somewhere</a> 
+                            <h4 className = "card-title">{name}</h4>
+                            <a href = {`/property/${id}/edit`} class = "btn btn-secondary">Edit</a> 
                         </div>
                         <h5>Address: {address}</h5>
                         <h5>Rental per month (S$): {rental_mth}</h5>
@@ -83,18 +87,8 @@ class ViewProperty extends React.Component {
         });
         return (
             <Layout title="MYOP - View">
-                <header>
-                    <div className="button-container" style={{ display: 'inline-block', position: 'absolute', right: '5%' }}>
-                        <form style={{ display: 'inline-block', margin: '0 5px' }} action="/logout">
-                            <input type="submit" value="Log out" />
-                        </form>
-                    </div>
-                    <h2> 
-                        <a href="/">Mind Your Own Property</a>
-                    </h2>
-                </header>
                 <div>
-                    {allHousesStatsArr}
+                    {allHouseStatsArr}
                 </div>
             </Layout>
         );

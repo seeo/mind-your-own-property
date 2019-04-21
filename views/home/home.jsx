@@ -1,7 +1,7 @@
 var React = require('react');
 var Layout = require('../layout');
 //tried using this package to load logo and display on home page. but can't seem to work. At least, if can't find image, the broken link icon will not show.
-var Img = require('react-image'); 
+// var Img = require('react-image'); 
 
 
 
@@ -87,22 +87,12 @@ class Home extends React.Component {
             );
         });
         //using react-image package to do the below, hides broken image icon if image is not found
-        let logoLocation = () => <Img src = '../../public/images/myop_logo.png' alt = "logo"/>;
+        // let logoLocation = () => <Img src = '../../public/images/myop_logo.png' alt = "logo"/>;
+
         // let logo = require('../../public/images/myop_logo.png');
         // <img src={process.env.PUBLIC_URL + '/myop_logo.png'} alt="logo" /> sauce: https://stackoverflow.com/questions/44154939/load-local-images-in-react-js
         return (
             <Layout title = "MYOP - Home">
-            <header>
-                <div className = "button-container" style = {{ display: 'inline-block', position: 'absolute', right: '5%'}}>
-                    <form style = {{ display: 'inline-block', margin: '0 5px' }} action = "/logout">
-                        <input type = "submit" value = "Log out" />
-                    </form>
-                </div>
-                    <h2>
-                        {logoLocation}
-                        <a href = "/">Mind Your Own Property</a>
-                    </h2>
-            </header>
                 <div>
                     {allHousesStatsArr}
                 </div>
