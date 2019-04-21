@@ -61,23 +61,26 @@ pool.on('error', function (err) {
  * ===================================================
  */
 
-const homeModelsFunction = require('./models/home');
+const homeModelsFunction = require(`./models/home`);
 const homeModelsObject = homeModelsFunction(pool);
 
-const registerModelsFunction = require('./models/register');
+const registerModelsFunction = require(`./models/register`);
 const registerModelsObject = registerModelsFunction(pool);
 
-const loginModelsFunction = require('./models/login');
+const loginModelsFunction = require(`./models/login`);
 const loginModelsObject = loginModelsFunction(pool);
 
-const addPropertyModelsFunction = require('./models/addProperty');
+const addPropertyModelsFunction = require(`./models/addProperty`);
 const addPropertyModelsObject = addPropertyModelsFunction(pool);
 
-const viewPropertyModelsFunction = require('./models/viewProperty');
+const viewPropertyModelsFunction = require(`./models/viewProperty`);
 const viewPropertyModelsObject = viewPropertyModelsFunction(pool);
 
-const editPropertyModelsFunction = require('./models/editProperty');
+const editPropertyModelsFunction = require(`./models/editProperty`);
 const editPropertyModelsObject = editPropertyModelsFunction(pool);
+
+const deletePropertyModelsFunction = require(`./models/deleteProperty`);
+const deletePropertyModelsObject = deletePropertyModelsFunction(pool);
 
 //this part is not required for my project, but just keeping here for now
     // const tweedModelsFunction = require('./models/tweed');
@@ -110,7 +113,7 @@ module.exports = {
     addPropertyModelsObject,
     viewPropertyModelsObject,
     editPropertyModelsObject,
-    // deletePropertyModelsObject,
+    deletePropertyModelsObject,
     // logoutModelsObject
     //this part is not required for my project, but just keeping here for now
         // tweedModelsObject: tweedModelsObject

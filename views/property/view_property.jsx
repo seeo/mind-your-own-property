@@ -74,6 +74,7 @@ class ViewProperty extends React.Component {
                     <div className = "card-body">
                         <div className = "view-prop-buttons-container"> 
                             <h4 className = "card-title">{name}</h4>
+                            <a href = {`/property/${id}/delete`} class="btn btn-secondary">Delete</a>
                             <a href = {`/property/${id}/edit`} class = "btn btn-secondary">Edit</a> 
                         </div>
                         <h5>Address: {address}</h5>
@@ -86,7 +87,7 @@ class ViewProperty extends React.Component {
             );
         });
         return (
-            <Layout title="MYOP - View">
+            <Layout title="MYOP - View Property">
                 <div>
                     {allHouseStatsArr}
                 </div>
