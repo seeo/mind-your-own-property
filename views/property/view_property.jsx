@@ -88,7 +88,9 @@ class ViewProperty extends React.Component {
                             <input type="submit" value="Log out" />
                         </form>
                     </div>
-                    <h2>Mind Your Own Property</h2>
+                    <h2> 
+                        <a href="/">Mind Your Own Property</a>
+                    </h2>
                 </header>
                 <div>
                     {allHousesStatsArr}

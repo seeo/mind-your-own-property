@@ -4,7 +4,7 @@ class AddNewProperty extends React.Component {
     render() {
         return (<Layout title = "MYOP - Add New Property">
             <h5>Add new property to your portfolio</h5>
-            <form method = "post" action = "/add_property">
+            <form method = "POST" action = "/add_property">
                 <input type = "text" name = "name" placeholder = "Give a name" />
                 <input type = "text" name = "address" placeholder = "Address of property" />
                 <input type = "text" name = "photo_url" placeholder = "Enter a photo url" />

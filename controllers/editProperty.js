@@ -47,7 +47,9 @@ module.exports = (allModels) => {
             console.log("printing out the result in edit prop controller: ...");
             console.log(result);
             //bring user to the home page and display all properties once new property is added
-            response.render('/property/edit_property');
+            response.render('./property/view_property', {
+                house: result
+            }); 
         };
         allModels.editPropertyModelsObject.editProperty(data, resultCallback, userIdFromCookies, propertyId);
     };

@@ -28,6 +28,10 @@ input {
 	max-height: 50%;
 }
 
+a h2{
+	text-decoration: none;
+}
+
 h3 {
 	color: brown;
 	font-family: Helvetica, sans-serif;
