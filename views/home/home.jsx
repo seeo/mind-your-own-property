@@ -1,5 +1,7 @@
 var React = require("react");
 var Layout = require("../layout");
+// var Img = require('react-image');
+
 
 class Home extends React.Component {
     
@@ -82,7 +84,8 @@ class Home extends React.Component {
                 </div>
             );
         });
-        let logoLocation = require('./small_cat.jpg');
+        // let logoLocation = () => <Img src = '../../public/images/small_cat.jpg' alt = "logo"/>;
+       
         return (
             <Layout title = "MYOP - Home">
             <header>
@@ -92,7 +95,7 @@ class Home extends React.Component {
                     </form>
                 </div>
                     <h2>
-                        <img src = {logoLocation} alt = "logo"/>
+                        
                         <a href = "/">Mind Your Own Property</a>
                     </h2>
             </header>
