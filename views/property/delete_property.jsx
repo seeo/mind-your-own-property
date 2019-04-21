@@ -2,6 +2,9 @@ const React = require('react');
 const View_property = require('./view_property');
 class DeleteProperty extends React.Component {
     render() {
+        let propertyId = this.props.data;
+        console.log("printing out this.props.data");
+        console.log(this.props.data);
         const actionAttribute = `/property/${propertyId}?_method=DELETE`;
 
         // console.log("printing outttt this.propssss for edit_property jsx...");
@@ -18,7 +21,7 @@ class DeleteProperty extends React.Component {
         // let actionAttributeCancel = `/property/${propertyId}?_method=GET`;
 
         return (<View_property>
-
+            
         </View_property>);
     }
 }

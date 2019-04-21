@@ -7,7 +7,8 @@ module.exports = (allModels) => {
 
     let deletePropertyRequestHandler = (request, response) => {
         if (request.cookies.userId != undefined) {
-            response.render(`./property/delete_property`);
+              let data = parseInt(request.params.id);
+            response.render(`./property/delete_property`,{data});
         } else {
             //please log in
             console.log("user not logged in at addProp controller, no cookies detected, redirecting to login page");
@@ -15,6 +16,11 @@ module.exports = (allModels) => {
         }
     }
     let deletePropertyControllerCallback = (request, response) => {
+         let userIdFromCookies;
+         let propertyId = parseInt(request.params.id);
+         console.log("printing out the propertyId / request.params.id in edit property controller callllbackkk: ...")
+         console.log(propertyId);
+         userIdFromCookies = request.cookies.userId;
         //TODO : should i include a cookies checker here? i.e. can only add property if have cookies
         // const data = {
         //     name: request.body.name,
