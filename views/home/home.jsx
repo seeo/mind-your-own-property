@@ -1,6 +1,8 @@
-var React = require("react");
-var Layout = require("../layout");
-// var Img = require('react-image');
+var React = require('react');
+var Layout = require('../layout');
+//tried using this package to load logo and display on home page. but can't seem to work. At least, if can't find image, the broken link icon will not show.
+var Img = require('react-image'); 
+
 
 
 class Home extends React.Component {
@@ -68,7 +70,7 @@ class Home extends React.Component {
                 console.log(typeof(day_credit));
             return (
                 <div className="card" stylename={"width: 18rem;"}>
-                    <img className="card-img-top" src={photo} alt="Property's image"/>
+                    <img className="card-img-top" src = {photo} alt="Property's image"/>
                     <div className="card-body">
                         <a href={`/property/${id}`}>
                             <div className = "home-buttons-container">
@@ -84,8 +86,10 @@ class Home extends React.Component {
                 </div>
             );
         });
-        // let logoLocation = () => <Img src = '../../public/images/small_cat.jpg' alt = "logo"/>;
-       
+        //using react-image package to do the below, hides broken image icon if image is not found
+        let logoLocation = () => <Img src = '../../public/images/myop_logo.png' alt = "logo"/>;
+        // let logo = require('../../public/images/myop_logo.png');
+        // <img src={process.env.PUBLIC_URL + '/myop_logo.png'} alt="logo" /> sauce: https://stackoverflow.com/questions/44154939/load-local-images-in-react-js
         return (
             <Layout title = "MYOP - Home">
             <header>
@@ -95,7 +99,7 @@ class Home extends React.Component {
                     </form>
                 </div>
                     <h2>
-                        
+                        {logoLocation}
                         <a href = "/">Mind Your Own Property</a>
                     </h2>
             </header>
