@@ -20,9 +20,9 @@ class DeleteProperty extends React.Component {
         // let actionAttributePut = `/property/${propertyId}?_method=PUT`;
         // let actionAttributeCancel = `/property/${propertyId}?_method=GET`;
 
-        return (<View_property>
+        return (
             
-        </View_property>);
+        );
     }
 }
 module.exports = DeleteProperty;

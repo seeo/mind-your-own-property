@@ -41,7 +41,7 @@ module.exports = (app, allModels) => {
     app.get(`/property/:id/edit`, editPropertyController.editPropertyRequestHandler);
     app.put(`/property/:id/`, editPropertyController.editPropertyControllerCallback);
 
-    const deletePropertyController = require(`./controllers/deleteProperty`)(allModels);
+    const deletePropertyController = require(`./controllers/editProperty`)(allModels);
     app.get(`/property/:id/delete`, deletePropertyController.deletePropertyRequestHandler);
     app.delete(`/property/:id/`, deletePropertyController.deletePropertyControllerCallback);
 

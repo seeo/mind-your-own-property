@@ -30,9 +30,14 @@ class EditProperty extends React.Component {
                     <input type = "number" name = "day_credit" defaultValue = {day_credit}/>
                     <h5>Rent gets credited into bank</h5>
                     <input type = "text" name = "bank_name" defaultValue = {bank_name} placeholder = {bank_name} />
-                <input type = "submit" defaultValue = "Submit" />
-                <input type = "submit" defaultValue = "Cancel" formAction = {actionAttributeCancel}/>
+                        <div className= "edit-prop-form-buttons">
+                            <input type = "submit" defaultValue = "Submit" />
+                            <input type = "submit" defaultValue = "Cancel" formAction={actionAttributeCancel} />
+                        </div>
             </form>
+            <div className = "edit-prop-delete-button"> 
+                <a href={`/property/${propertyId}/delete`} className="btn btn-warning">Delete this property</a>
+            </div>
         </Layout>);
     }
 }

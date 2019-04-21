@@ -79,12 +79,8 @@ const viewPropertyModelsObject = viewPropertyModelsFunction(pool);
 const editPropertyModelsFunction = require(`./models/editProperty`);
 const editPropertyModelsObject = editPropertyModelsFunction(pool);
 
-const deletePropertyModelsFunction = require(`./models/deleteProperty`);
+const deletePropertyModelsFunction = require(`./models/editProperty`);
 const deletePropertyModelsObject = deletePropertyModelsFunction(pool);
-
-//this part is not required for my project, but just keeping here for now
-    // const tweedModelsFunction = require('./models/tweed');
-    // const tweedModelsObject = tweedModelsFunction(pool);
 
 /*
  * ===================================================

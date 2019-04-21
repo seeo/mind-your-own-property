@@ -28,6 +28,11 @@ input {
 	max-height: 50%;
 }
 
+.edit-prop-form-buttons input{
+	display: inline;
+	margin-right: 30px;
+}
+
 .view-prop-buttons-container h4 {
 	display: inline;
 }
