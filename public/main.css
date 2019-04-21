@@ -28,6 +28,14 @@ input {
 	max-height: 50%;
 }
 
+.view-prop-buttons-container h4 {
+	display: inline;
+}
+
+.view-prop-buttons-container a {
+	float: right;
+}
+
 a h2{
 	text-decoration: none;
 }
@@ -47,7 +55,7 @@ h4 {
 	font-weight: lighter;
 }
 
-h4:hover {
+.home-buttons-container h4:hover {
 	font-weight: bold;
 }
 

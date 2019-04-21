@@ -69,7 +69,9 @@ class Home extends React.Component {
                     <img className="card-img-top" src={photo} alt="Property's image"/>
                     <div className="card-body">
                         <a href={`/property/${id}`}>
-                            <h4 className="card-title">{name}</h4>
+                            <div className = "home-buttons-container">
+                                <h4 className="card-title">{name}</h4>
+                            </div>
                         </a>
                         <h5>Address: {address}</h5>
                         <h5>Rental per month (S$): {rental_mth}</h5>
@@ -80,6 +82,7 @@ class Home extends React.Component {
                 </div>
             );
         });
+        let logoLocation = require('./small_cat.jpg');
         return (
             <Layout title = "MYOP - Home">
             <header>
@@ -89,6 +92,7 @@ class Home extends React.Component {
                     </form>
                 </div>
                     <h2>
+                        <img src = {logoLocation} alt = "logo"/>
                         <a href = "/">Mind Your Own Property</a>
                     </h2>
             </header>

@@ -22,6 +22,13 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+module: {
+    loaders: [{
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
+    }]
+}
+
 // Set react-views to be the default view engine
 const reactEngine = require('express-react-views').createEngine();
 
