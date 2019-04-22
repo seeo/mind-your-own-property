@@ -94,6 +94,7 @@ class Home extends React.Component {
         return (
             <Layout title = "MYOP - Home">
                 <div>
+                    
                     {allHousesStatsArr}
                 </div>
             </Layout>

@@ -28,7 +28,12 @@ input {
 	max-height: 50%;
 }
 
-.edit-prop-form-buttons input{
+.edit-prop-delete-button-container p{
+	color: "orange";
+	font-style: italic;
+}
+
+.edit-prop-form-buttons-container input{
 	display: inline;
 	margin-right: 30px;
 }

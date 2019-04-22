@@ -37,17 +37,14 @@ module.exports = (app, allModels) => {
     const viewPropertyController = require(`./controllers/viewProperty`)(allModels);
     app.get(`/property/:id`, viewPropertyController.viewPropertyControllerCallback);
 
+    //the editPropertyController has both edit and delete features
     const editPropertyController = require(`./controllers/editProperty`)(allModels);
     app.get(`/property/:id/edit`, editPropertyController.editPropertyRequestHandler);
     app.put(`/property/:id/`, editPropertyController.editPropertyControllerCallback);
+    
+    //for now, when building the delete feature, am going to build w/o warning feedback to user, just to test if the delete from database works
+    // app.get(`/property/:id/delete`, editPropertyController.deletePropertyRequestHandler);
+    app.delete(`/property/:id/`, editPropertyController.deletePropertyControllerCallback);
 
-    const deletePropertyController = require(`./controllers/editProperty`)(allModels);
-    app.get(`/property/:id/delete`, deletePropertyController.deletePropertyRequestHandler);
-    app.delete(`/property/:id/`, deletePropertyController.deletePropertyControllerCallback);
-
-    //this part is not required for my project, but just keeping here for now
-        // const tweedController = require('./controllers/tweed')(allModels);
-        // app.get('/tweed', tweedController.tweed);
-        // app.post('/tweed', tweedController.tweedControllerCallback);
   
 };

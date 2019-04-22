@@ -79,8 +79,9 @@ const viewPropertyModelsObject = viewPropertyModelsFunction(pool);
 const editPropertyModelsFunction = require(`./models/editProperty`);
 const editPropertyModelsObject = editPropertyModelsFunction(pool);
 
-const deletePropertyModelsFunction = require(`./models/editProperty`);
-const deletePropertyModelsObject = deletePropertyModelsFunction(pool);
+//delete property models object is found within the edit property models. because the feature to delete property is found within the edit property page.
+// const deletePropertyModelsFunction = require(`./models/editProperty`);
+// const deletePropertyModelsObject = deletePropertyModelsFunction(pool);
 
 /*
  * ===================================================
@@ -109,7 +110,6 @@ module.exports = {
     addPropertyModelsObject,
     viewPropertyModelsObject,
     editPropertyModelsObject,
-    deletePropertyModelsObject,
     // logoutModelsObject
     //this part is not required for my project, but just keeping here for now
         // tweedModelsObject: tweedModelsObject
