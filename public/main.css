@@ -18,18 +18,18 @@ input {
 	background-color: azure;
 }
 
-/*#navbar-supported-content{
+#navbar-supported-content{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
-} */
+	justify-content: space-between;
+}
 
 #navbar-home-to-aboutus{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	width: 100%;
 }
-
 
 #navbar-home-to-aboutus a {
 	color: white;
@@ -37,6 +37,10 @@ input {
 
 #navbar-home-to-aboutus a:hover {
 	color: black;
+}
+
+#navbar-user-account-container{
+	/* margin-left: 350px; */
 }
 
 .logout-form {

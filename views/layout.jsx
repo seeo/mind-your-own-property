@@ -14,7 +14,8 @@ class Layout extends React.Component {
                 </head>
                 <body>
                     <header>
-                        <nav className="navbar navbar-expand-lg navbar-light" style={{'background-color': 'rgb(55,117,166)'}}>
+                        <nav className="navbar navbar-expand-lg navbar-light" id = "main-navbar" style={{'background-color': 'rgb(55,117,166)'}}>
+                            
                             <div id = "logo-container-in-navbar">
                                 <a className="navbar-brand" href="/">
                                     <img src = "/images/myop_logo_2.png" width="220" height="70" alt="logo"/>
@@ -26,19 +27,19 @@ class Layout extends React.Component {
                                         <a className="nav-link" href="/">Home</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/tracking">Add </a>
+                                        <a className="nav-link" href="/add_property">Add</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/overview">Financial Overview</a>
+                                        <a className="nav-link" href="#">Financial Overview</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/transactions">Transactions</a>
+                                        <a className="nav-link" href="#">Transactions</a>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#">About us</a>
                                     </li>
                                 </ul>
-                                <div className="nav-item dropdown">
+                                <div className="nav-item dropdown" id="navbar-user-account-container">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbar-account-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Account&nbsp; <img src="https://img.icons8.com/office/35/000000/person-male.png" />
                                     </a>
