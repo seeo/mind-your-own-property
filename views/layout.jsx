@@ -26,8 +26,17 @@ class Layout extends React.Component {
                                     <li className="nav-item">
                                         <a className="nav-link" href="/">Home</a>
                                     </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="/add_property">Add</a>
+                                    <li>
+                                        <div className = "nav-item dropdown"> 
+                                            <a className="nav-link dropdown-toggle" href="#" id="navbar-add-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add</a>
+                                            <div className="dropdown-menu" aria-labelledby="navbar-add-dropdown">
+                                                <a className="dropdown-item" href="/add_property">Add property</a>
+                                                <div className="dropdown-divider"></div>
+                                                <a className="dropdown-item" href="#">Add tenant</a>
+                                                <div className="dropdown-divider"></div>
+                                                <a className="dropdown-item" href="#">Add agent</a>
+                                            </div>
+                                        </div>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#">Financial Overview</a>
@@ -41,7 +50,7 @@ class Layout extends React.Component {
                                 </ul>
                                 <div className="nav-item dropdown" id="navbar-user-account-container">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbar-account-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Account&nbsp; <img src="https://img.icons8.com/office/35/000000/person-male.png" />
+                                        Account&nbsp; <img src="https://img.icons8.com/cotton/64/000000/gender-neutral-user--v2.png"/>
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbar-account-dropdown">
                                         <a className="dropdown-item" href="#">Profile</a>

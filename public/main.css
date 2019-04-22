@@ -31,7 +31,7 @@ input {
 	width: 100%;
 }
 
-#navbar-home-to-aboutus a {
+#navbar-home-to-aboutus .nav-link{
 	color: white;
 }
 
@@ -39,8 +39,16 @@ input {
 	color: black;
 }
 
+#navbar-add-dropdown div a{
+	background-color: black;
+}
+
 #navbar-user-account-container{
 	/* margin-left: 350px; */
+}
+
+#navbar-account-dropdown{
+	color:white;
 }
 
 .logout-form {
