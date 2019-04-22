@@ -21,6 +21,12 @@ class Layout extends React.Component {
                                     <img src = "/images/myop_logo_2.png" width="220" height="70" alt="logo"/>
                                 </a>
                             </div>
+                            
+                            <button class = "navbar-toggler" data-toggle = "collapse" data-target="#navbar-supported-content">
+                                <span class = "navbar-toggler-icon"></span>
+                            </button>
+
+
                             <div className="collapse navbar-collapse" id = "navbar-supported-content">
                                 <ul className="navbar-nav" id = "navbar-home-to-aboutus">
                                     <li className="nav-item">

@@ -74,6 +74,11 @@ input[type = number],[type=text]{
 	max-height: 50%;
 }
 
+.add-prop-header-title{
+	color: brown;
+	margin-top: 20px;
+}
+
 .add-prop-button-container input, h6{
 	display: inline;
 	margin-right: 30px;

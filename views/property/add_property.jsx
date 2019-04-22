@@ -4,7 +4,7 @@ class AddNewProperty extends React.Component {
     render() {
         //sauce: //sauce: https://stackoverflow.com/questions/5650457/html-select-form-with-option-to-enter-custom-value
         return (<Layout title = "MYOP - Add New Property">
-            <h5 styleName = {"margin-top:20px"}>Add new property to your portfolio</h5>
+            <h5 class = "add-prop-header-title">Add new property to your portfolio</h5>
             <form method = "POST" action = "/add_property">
                 <input type="text" name="name" placeholder="Give a name"/>
                 <input type="text" name="address" placeholder="Address of property"/>
