@@ -79,7 +79,7 @@ const viewPropertyModelsObject = viewPropertyModelsFunction(pool);
 const editPropertyModelsFunction = require(`./models/editProperty`);
 const editPropertyModelsObject = editPropertyModelsFunction(pool);
 
-//delete property models object is found within the edit property models. because the feature to delete property is found within the edit property page.
+//delete property models object is found within the edit property controller because the feature to delete property is found within the edit property page.
 // const deletePropertyModelsFunction = require(`./models/editProperty`);
 // const deletePropertyModelsObject = deletePropertyModelsFunction(pool);
 

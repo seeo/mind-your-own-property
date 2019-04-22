@@ -43,10 +43,10 @@ module.exports = (dbPoolInstance) => {
 
          dbPoolInstance.query(queryString, (error, result) => {
              if (error) {
-                 console.log("delete property query error in models", error);
+                 console.log("delete property query error in edit prop model", error);
              } else {
                  // invoke callback function with results after query has executed
-                 console.log("printing out the delete property result.rows in models: ...");
+                 console.log("printing out the delete property result.rows in edit prop model: ...");
                  console.log(result.rows);
                  callback(result.rows);
              }
