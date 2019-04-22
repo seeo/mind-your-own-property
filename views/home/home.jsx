@@ -122,7 +122,7 @@ class Home extends React.Component {
         return (
             <Layout title = "MYOP - Home">
                 <div>
-                    <div className = "card-group">
+                    <div className = "card-columns">
                         {allHousesStatsArr}
                     </div>
                 </div>

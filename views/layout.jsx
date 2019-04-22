@@ -21,11 +21,10 @@ class Layout extends React.Component {
                                     <img src = "/images/myop_logo_2.png" width="220" height="70" alt="logo"/>
                                 </a>
                             </div>
-                            
-                            <button class = "navbar-toggler" data-toggle = "collapse" data-target="#navbar-supported-content">
-                                <span class = "navbar-toggler-icon"></span>
-                            </button>
 
+                            <button className="navbar-toggler" data-toggle="collapse" data-target="#navbar-supported-content" aria-expanded="false">
+                                <span className = "navbar-toggler-icon"></span>
+                            </button>
 
                             <div className="collapse navbar-collapse" id = "navbar-supported-content">
                                 <ul className="navbar-nav" id = "navbar-home-to-aboutus">
@@ -56,6 +55,12 @@ class Layout extends React.Component {
                                         <a className="nav-link" href="#">About us</a>
                                     </li>
                                 </ul>
+                                    <form className="form-inline my-4 my-lg-2">
+                                        <input style={{"margin-bottom": 0}} className="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search"/>
+                                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                    </form>
+                                
+
                                 <div className="nav-item dropdown" id="navbar-user-account-container">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbar-account-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Account&nbsp; <img src="https://img.icons8.com/cotton/64/000000/gender-neutral-user--v2.png"/>
@@ -67,14 +72,13 @@ class Layout extends React.Component {
                                         <a className="dropdown-item" href="/logout">Logout</a>
                                     </div>
                                 </div>
-                          
                             </div>
                         </nav>
                     </header>
                     {this.props.children}
-                    <footer class="clearfix">
-                        <p class="copyright">Copyright 2019</p>
-                        <p class="message">Created with &hearts; by <span class="name">Chris Eo with GA</span></p>
+                    <footer className="clearfix">
+                        <p className="copyright">Copyright 2019</p>
+                        <p className="message">Created with &hearts; by <span className="name">Chris Eo with GA</span></p>
                         <a href="#">Facebook</a> |
                         <a href="#">Twitter</a>|
                         <a href="#">Instagram</a>|

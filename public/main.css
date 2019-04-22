@@ -22,10 +22,10 @@ input[type = number],[type=text]{
 }
 
 #logo-container-in-navbar {
-	float: left;
+	
 	background-color: azure;
 }
-
+/*
 #navbar-supported-content{
 	display: flex;
 	flex-direction: row;
@@ -38,7 +38,7 @@ input[type = number],[type=text]{
 	justify-content: space-around;
 	width: 100%;
 }
-
+*/
 #navbar-home-to-aboutus .nav-link{
 	color: white;
 }
