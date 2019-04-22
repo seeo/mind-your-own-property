@@ -19,7 +19,7 @@ module.exports = (allModels) => {
         const data = {
             name: request.body.name,
             address: request.body.address,
-            photo: request.body.photo,
+            photo: request.body.photo_url,
             rental_mth: request.body.rental_mth,
             day_credit: request.body.day_credit,
             bank_name: request.body.bank_name,

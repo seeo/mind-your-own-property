@@ -24,7 +24,7 @@ class EditProperty extends React.Component {
                     <h5>Address</h5>
                     <input type = "text" name = "address" defaultValue = {address} placeholder = {address} />
                     <h5>Photo Url</h5>
-                    <input type = "text" name = "photo" defaultValue = {photo} placeholder = {photo} />
+                    <input type = "text" name = "photo_url" defaultValue = {photo} placeholder = {photo} />
                     <h5>Rental per month (S$)</h5>
                     <input type = "text" name = "rental_mth" defaultValue = {rental_mth}/>
                     <h5>Rental due every this day of the month</h5>
@@ -38,7 +38,7 @@ class EditProperty extends React.Component {
             </form>
             <form className = "edit-prop-delete-form-container" method = "POST" action = {actionAttributeDelete}> 
                 <input className="btn btn-warning" type = "submit" defaultValue = "Delete this property*" />
-                <p>* WARNING: This will delete your property data and associated tenancy / lease data </p>
+                <p>* WARNING: This will delete your property, and (if any) tenancy / lease data</p>
             </form>
         </Layout>);
     }
