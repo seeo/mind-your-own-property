@@ -11,9 +11,12 @@ class AddNewProperty extends React.Component {
                 <input type = "number" name = "rental_mth" placeholder = "Rental/mth ($$)" />
                 <input type = "number" name = "day_credit" placeholder = "Rent is due on day of month" />
                 <input type = "text" name = "bank_name" placeholder = "Bank where rent gets credited" />
-                <input type = "submit" value = "Submit" />
+                <div className = "add-prop-button-container">
+                    <input type = "submit" value = "Submit" />
+                    <h6><a href="/">I will add later </a></h6>
+                </div>
             </form>
-            <h6><a href="/">I will add later </a></h6>
+            
         </Layout>);
     }
 }

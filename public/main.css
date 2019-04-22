@@ -13,6 +13,10 @@ input {
 	margin-bottom: 30px;
 }
 
+#main-navbar{
+	background-color: rgb(55, 117, 166);
+}
+
 #logo-container-in-navbar {
 	float: left;
 	background-color: azure;
@@ -64,6 +68,11 @@ input {
 .resize-img {
 	max-width: 50%;
 	max-height: 50%;
+}
+
+.add-prop-button-container input, h6{
+	display: inline;
+	margin-right: 30px;
 }
 
 .edit-prop-delete-form-container p{
