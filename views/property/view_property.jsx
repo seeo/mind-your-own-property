@@ -79,7 +79,7 @@ class ViewProperty extends React.Component {
                         </div>
                         <h5>Address: {address}</h5>
                         <h5>Rental per month (S$): {rental_mth}</h5>
-                        <h5>Rent due on day (of the month): {day_credit}</h5>
+                        <h5>Rent due every this day (of the month): {day_credit}</h5>
                         <h5>Days to next payment: {this.renderDayCredit(day_credit)}</h5>
                         <h5>Rent credited into: {bank_name}</h5>
                     </div>

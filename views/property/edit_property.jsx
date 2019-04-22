@@ -26,7 +26,7 @@ class EditProperty extends React.Component {
                     <input type = "text" name = "photo" defaultValue = {photo} placeholder = {photo} />
                     <h5>Rental per month (S$)</h5>
                     <input type = "text" name = "rental_mth" value = {rental_mth}/>
-                    <h5>Rental is due on this day of the month</h5>
+                    <h5>Rental due every this day of the month</h5>
                     <input type = "number" name = "day_credit" defaultValue = {day_credit}/>
                     <h5>Rent gets credited into bank</h5>
                     <input type = "text" name = "bank_name" defaultValue = {bank_name} placeholder = {bank_name} />
