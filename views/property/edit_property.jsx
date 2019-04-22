@@ -30,7 +30,18 @@ class EditProperty extends React.Component {
                     <h5>Rental due every this day of the month</h5>
                     <input type = "number" name = "day_credit" defaultValue = {day_credit}/>
                     <h5>Rent gets credited into bank</h5>
-                    <input type = "text" name = "bank_name" defaultValue = {bank_name} placeholder = {bank_name} />
+                    <input type = "text" list = "banks" name = "bank_name" defaultValue = {bank_name} placeholder = {bank_name} />
+                        <datalist id="banks">
+                            <option>DBS / POSB</option>
+                            <option>OCBC</option>
+                            <option>UOB</option>
+                            <option>Standard Chartered</option>
+                            <option>Citibank</option>
+                            <option>HSBC</option>
+                            <option>Maybank</option>
+                            <option>CIMB</option>
+                            <option>ICBC</option>
+                        </datalist>
                         <div className= "edit-prop-form-buttons-container">
                             <input type = "submit" defaultValue = "Submit" />
                             <input type = "submit" defaultValue = "Cancel" formAction = {actionAttributeCancel} />
@@ -38,7 +49,7 @@ class EditProperty extends React.Component {
             </form>
             <form className = "edit-prop-delete-form-container" method = "POST" action = {actionAttributeDelete}> 
                 <input className="btn btn-warning" type = "submit" defaultValue = "Delete this property*" />
-                <p>* WARNING: This will delete your property, and (if any) tenancy / lease data</p>
+                <p>* WARNING: This will delete your property, and tenancy data (if any)</p>
             </form>
         </Layout>);
     }

@@ -10,7 +10,11 @@ header {
 
 input {
 	display: block;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
+}
+/*sauce: https://stackoverflow.com/questions/22709792/input-type-number-wont-resize  */
+input[type = number],[type=text]{
+	width: 250px;
 }
 
 #main-navbar{
@@ -75,15 +79,14 @@ input {
 	margin-right: 30px;
 }
 
-.edit-prop-delete-form-container p{
-	color: rgba(255, 115, 0, 0.924);
-	font-style: italic;
-	/*margin-top: 10px; */
-}
-
 .edit-prop-form-buttons-container input{
 	display: inline;
 	margin-right: 30px;
+}
+
+.edit-prop-delete-form-container p {
+	color: rgba(255, 115, 0, 0.924);
+	font-style: italic;
 }
 
 #view-prop-dark-overlay{

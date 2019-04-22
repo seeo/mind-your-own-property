@@ -43,6 +43,31 @@ class ViewProperty extends React.Component {
         )
     }
 
+    renderCreditIntoBankSwitch(bank) {
+        switch (bank) {
+            case 'DBS / POSB':
+                return 'https://internet-banking.dbs.com.sg/IB/Welcome';
+            case 'OCBC':
+                return 'https://internet.ocbc.com/internet-banking/';
+            case 'UOB':
+                return 'https://pib.uob.com.sg/PIBLogin/Public/processPreCapture.do?keyId=lpc';
+            case 'Standard Chartered':
+                return 'https://ibank.standardchartered.com.sg/nfs/login.htm';
+            case 'Citibank':
+                return 'https://www.citibank.com.sg/SGGCB/JSO/signon/DisplayUsernameSignon.do';
+            case 'HSBC':
+                return 'https://www.hsbc.com.sg/ways-to-bank/online/';
+            case 'Maybank':
+                return 'https://sslsecure.maybank.com.sg/cgi-bin/mbs/scripts/mbb_login.jsp';
+            case 'CIMB':
+                return 'https://www.cimbclicks.com.sg/clicks/';
+            case 'ICBC':
+                return 'https://mybank.icbc.com.cn/icbc/newenperbank/perbank3/frame/frame_index.jsp';
+            default:
+                return '#';
+        }
+    }
+
     render() {
 
         console.log("Creating a loop now for homeeeeee page of houses owned by userrrr/landlord..");
@@ -81,7 +106,7 @@ class ViewProperty extends React.Component {
                         <h5>Rental per month (S$): {rental_mth}</h5>
                         <h5>Rent due every this day (of the month): {day_credit}</h5>
                         <h5>Days to next payment: {this.renderDayCredit(day_credit)}</h5>
-                        <h5>Rent credited into: {bank_name}</h5>
+                        <h5>Rent credited into: <a href={this.renderCreditIntoBankSwitch(bank_name)} target="_blank">{bank_name}</a></h5>
                     </div>
                 </div>
             );

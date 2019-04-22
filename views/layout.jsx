@@ -30,16 +30,18 @@ class Layout extends React.Component {
                                         <div className = "nav-item dropdown"> 
                                             <a className="nav-link dropdown-toggle" href="#" id="navbar-add-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add</a>
                                             <div className="dropdown-menu" aria-labelledby="navbar-add-dropdown">
-                                                <a className="dropdown-item" href="/add_property">Add property</a>
+                                                <a className="dropdown-item" href="/add_property">new property</a>
                                                 <div className="dropdown-divider"></div>
-                                                <a className="dropdown-item" href="#">Add tenant</a>
+                                                <a className="dropdown-item" href="#">new tenant</a>
                                                 <div className="dropdown-divider"></div>
-                                                <a className="dropdown-item" href="#">Add agent</a>
+                                                <a className="dropdown-item" href="#">new agent</a>
+                                                <div className="dropdown-divider"></div>
+                                                <a className="dropdown-item" href="#">new transaction</a>
                                             </div>
                                         </div>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Financial Overview</a>
+                                        <a className="nav-link" href="#">Portfolio Overview</a>
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#">Transactions</a>
@@ -64,6 +66,14 @@ class Layout extends React.Component {
                         </nav>
                     </header>
                     {this.props.children}
+                    <footer class="clearfix">
+                        <p class="copyright">Copyright 2019</p>
+                        <p class="message">Created with &hearts; by <span class="name">Chris Eo with GA</span></p>
+                        <a href="#">Facebook</a> |
+                        <a href="#">Twitter</a>|
+                        <a href="#">Instagram</a>|
+                        <a href="https://www.linkedin.com/in/siangeeeo/">LinkedIn</a>
+                    </footer>
                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
