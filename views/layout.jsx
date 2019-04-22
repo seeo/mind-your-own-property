@@ -14,7 +14,7 @@ class Layout extends React.Component {
                 </head>
                 <body>
                     <header>
-                        <nav className="navbar fixed-top navbar-expand-lg navbar-light" id = "main-navbar">
+                        <nav className="navbar sticky-top navbar-expand-lg navbar-light" id = "main-navbar">
                             
                             <div id = "logo-container-in-navbar">
                                 <a className="navbar-brand" href="/">

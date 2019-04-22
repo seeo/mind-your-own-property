@@ -69,10 +69,12 @@ class Home extends React.Component {
                 console.log("printing out data type of day_credit: ...");
                 console.log(typeof(day_credit));
             return (
-                <div className="card" stylename={"width: 18rem;"}>
-                    <img className="card-img-top" src = {photo} alt="Property's image"/>
-                    <div className="card-body">
-                        <a href={`/property/${id}`}>
+                <div className = "card" stylename = {"width: 18rem;"}>
+                    <a href={`/property/${id}`}>
+                        <img className = "card-img-top" src = {photo} alt = "Property's image"/>
+                    </a>
+                    <div className = "card-body">
+                        <a href = {`/property/${id}`}>
                             <div className = "home-buttons-container">
                                 <h4 className="card-title">{name}</h4>
                             </div>
@@ -94,8 +96,9 @@ class Home extends React.Component {
         return (
             <Layout title = "MYOP - Home">
                 <div>
-                    
-                    {allHousesStatsArr}
+                    <div className = "card-group">
+                        {allHousesStatsArr}
+                    </div>
                 </div>
             </Layout>
         );
