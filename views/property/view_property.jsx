@@ -69,13 +69,13 @@ class ViewProperty extends React.Component {
             // { actionAttributePut }
 
             return (
-                <div className = "card" stylename={"width: 18rem;"}>
-                    <img className = "card-img-top" src={photo} alt="Property's image" />
-                    <div className = "card-body">
-                        <div className = "view-prop-buttons-container"> 
+                <div className = "card bg-dark text-white" stylename = {"width: 18rem;"}>
+                    <img className="card-img" src = {photo} alt = "Property's image" />
+                    <div className="card-img-overlay" id = "view-prop-dark-overlay">
+                        <div className="view-prop-buttons-container" id="test-card-img-4">
                             <h4 className = "card-title">{name}</h4>
                             <a href = {`/property/${id}/edit`} className = "btn btn-secondary">Edit</a>
-                            <a href={`/`} className="btn btn-secondary">Back</a> 
+                            <a href = {`/`} className="btn btn-secondary">Back</a> 
                         </div>
                         <h5>Address: {address}</h5>
                         <h5>Rental per month (S$): {rental_mth}</h5>

@@ -86,6 +86,10 @@ input {
 	margin-right: 30px;
 }
 
+#view-prop-dark-overlay{
+	background: rgba(0,0,0,0.7);
+}
+
 .view-prop-buttons-container h4 {
 	display: inline;
 }
