@@ -10,7 +10,8 @@ class AddNewProperty extends React.Component {
                 <input type = "text" name = "photo_url" placeholder = "Enter a photo url" />
                 <input type = "number" name = "rental_mth" placeholder = "Rental/mth ($$)" />
                 <input type = "number" name = "day_credit" placeholder = "Rent is due on day of month" />
-                <input type = "text" name = "bank_name" placeholder = "Bank where rent gets credited" />
+                <input type = "text" list = "banks" name = "bank_name" placeholder = "Bank where rent gets credited"/>
+                    
                 <div className = "add-prop-button-container">
                     <input type = "submit" value = "Submit" />
                     <h6><a href="/">I will add later </a></h6>
