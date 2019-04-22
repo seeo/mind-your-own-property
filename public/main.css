@@ -13,6 +13,32 @@ input {
 	margin-bottom: 30px;
 }
 
+#logo-container-in-navbar {
+	float: left;
+	background-color: azure;
+}
+
+/*#navbar-supported-content{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+} */
+
+#navbar-home-to-aboutus{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+
+#navbar-home-to-aboutus a {
+	color: white;
+}
+
+#navbar-home-to-aboutus a:hover {
+	color: black;
+}
+
 .logout-form {
 	color: brown;
 	display: inline-block;

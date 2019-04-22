@@ -18,9 +18,9 @@ class ViewProperty extends React.Component {
         let countDown = daysToNextPayment(dateOfPayment);
         let className = 'rounded-pill text-dark';
         if (countDown > 5) {
-            className = 'bg-success rounded-pill text-white'; //green color
+            className = 'bg-success rounded-pill text-dark-50'; //green color
         } else if (countDown > 1 && countDown <= 5) {
-            className = 'bg-warning rounded-pill text-white'; //orange color
+            className = 'bg-warning rounded-pill text-dark'; //orange color
         } else {
             className = 'bg-danger rounded-pill text-white'; // red color
         }
