@@ -36,6 +36,7 @@ module.exports = (app, allModels) => {
 
     const viewPropertyController = require(`./controllers/viewProperty`)(allModels);
     app.get(`/property/:id`, viewPropertyController.viewPropertyControllerCallback);
+    //propertyController.getProperty)
 
     //the editPropertyController has both edit and delete features
     const editPropertyController = require(`./controllers/editProperty`)(allModels);

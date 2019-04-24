@@ -36,6 +36,9 @@ module.exports = (allModels) => {
                 //bring user to the home page and display all properties once new property is added
                 response.render('./property/view_property', {house: result});
             };
+            allModels.viewPropertyModelsObject.viewProperty(userId, (error, result) => {
+                
+            })
             allModels.viewPropertyModelsObject.viewProperty(resultCallback, userIdFromCookies, propertyId);
         }
     };

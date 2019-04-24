@@ -10,6 +10,7 @@ module.exports = (dbPoolInstance) => {
         dbPoolInstance.query(queryString, (error, result) => {
             if (error) {
                 console.log("view property query error in models", error);
+                //I will need to write an error callback here: but look at gitbook first....
             } else {
                 // invoke callback function with results after query has executed
                 console.log("printing out the view property result.rows in models: ...");
