@@ -32,12 +32,13 @@ module.exports = (allModels) => {
                 console.log("view prop controller starting upppp:... ");
                 console.log("printing out the result in view prop controller: ...");
                 console.log(result);
-                
+
                 //bring user to the home page and display all properties once new property is added
                 response.render('./property/view_property', {house: result});
+                console.log("userIdFromCookies", userIdFromCookies);
             };
-            allModels.viewPropertyModelsObject.viewProperty(userId, (error, result) => {
-                
+            allModels.viewPropertyModelsObject.viewProperty(userIdFromCookies, (error, result) => {
+
             })
             allModels.viewPropertyModelsObject.viewProperty(resultCallback, userIdFromCookies, propertyId);
         }
