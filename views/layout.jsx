@@ -74,7 +74,7 @@ class Layout extends React.Component {
 
                             {this.props.children}
 
-                    <footer id="footer" className="clearfix page-footer font-small pt-4 fixed-bottom">
+                    <footer id="footer" className="clearfix">
                         <div className ="container">
                             <ul className="list-unstyled list-inline text-center">
                                 <a href="https://twitter.com/siangeeeo" target="_blank">Twitter</a> | <span> </span>

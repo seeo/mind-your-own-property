@@ -13,7 +13,7 @@ input {
 	margin-bottom: 25px;
 }
 /*sauce: https://stackoverflow.com/questions/22709792/input-type-number-wont-resize  */
-input[type = number],[type=text]{
+input[type = number],[type=text], [type=password]{
 	width: 250px;
 }
 
