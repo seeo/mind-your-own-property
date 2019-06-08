@@ -13,9 +13,11 @@ class Layout extends React.Component {
                     <title>{this.props.title}</title>
                 </head>
                 <body>
+                    <div id="page-container">
+                    <div id="content-wrap">
                     <header>
                         <nav className="navbar sticky-top navbar-expand-lg navbar-light" id = "main-navbar">
-                            
+
                             <div id = "logo-container-in-navbar">
                                 <a className="navbar-brand" href="/">
                                     <img src = "/images/myop_logo_2.png" width="220" height="70" alt="logo"/>
@@ -32,7 +34,7 @@ class Layout extends React.Component {
                                         <a className="nav-link" href="/">Home</a>
                                     </li>
                                     <li>
-                                        <div className = "nav-item dropdown"> 
+                                        <div className = "nav-item dropdown">
                                             <a className="nav-link dropdown-toggle" href="#" id="navbar-add-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add</a>
                                             <div className="dropdown-menu" aria-labelledby="navbar-add-dropdown">
                                                 <a className="dropdown-item" href="/add_property">new property</a>
@@ -59,7 +61,7 @@ class Layout extends React.Component {
                                         <input style={{"margin-bottom": 0}} className="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search"/>
                                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                                     </form>
-                                
+
 
                                 <div className="nav-item dropdown" id="navbar-user-account-container">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbar-account-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -75,15 +77,18 @@ class Layout extends React.Component {
                             </div>
                         </nav>
                     </header>
-                    {this.props.children}
-                    <footer className="clearfix">
-                        <p className="copyright">Copyright 2019</p>
-                        <p className="message">Created with &hearts; by <span className="name">Chris Eo with GA</span></p>
-                        <a href="#">Facebook</a> |
-                        <a href="#">Twitter</a>|
-                        <a href="#">Instagram</a>|
-                        <a href="https://www.linkedin.com/in/siangeeeo/">LinkedIn</a>
-                    </footer>
+
+                            {this.props.children}
+                    </div>
+                        <footer id="footer" className="clearfix">
+                            <p className="copyright">Copyright 2019</p>
+                            <p className="message">Created with &hearts; by <span className="name">Christophe Eo Siang Ee with General Assembly</span></p>
+
+                            <a href="https://twitter.com/siangeeeo" target="_blank">Twitter</a> | <span> </span>
+                            <a href="https://github.com/seeo/mind-your-own-property" target="_blank">Github</a> | <span> </span>
+                            <a href="https://www.linkedin.com/in/siangeeeo/" target="_blank">LinkedIn</a>
+                        </footer>
+                    </div>
                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -61,22 +61,22 @@ pool.on('error', function (err) {
  * ===================================================
  */
 
-const homeModelsFunction = require(`./models/home`);
+const homeModelsFunction = require(`./models/homeModel`);
 const homeModelsObject = homeModelsFunction(pool);
 
-const registerModelsFunction = require(`./models/register`);
+const registerModelsFunction = require(`./models/onboard/registerModel`);
 const registerModelsObject = registerModelsFunction(pool);
 
-const loginModelsFunction = require(`./models/login`);
+const loginModelsFunction = require(`./models/onboard/loginModel`);
 const loginModelsObject = loginModelsFunction(pool);
 
-const addPropertyModelsFunction = require(`./models/addProperty`);
+const addPropertyModelsFunction = require(`./models/property/addPropertyModel`);
 const addPropertyModelsObject = addPropertyModelsFunction(pool);
 
-const viewPropertyModelsFunction = require(`./models/viewProperty`);
+const viewPropertyModelsFunction = require(`./models/property/viewPropertyModel`);
 const viewPropertyModelsObject = viewPropertyModelsFunction(pool);
 
-const editPropertyModelsFunction = require(`./models/editProperty`);
+const editPropertyModelsFunction = require(`./models/property/editPropertyModel`);
 const editPropertyModelsObject = editPropertyModelsFunction(pool);
 
 //delete property models object is found within the edit property controller because the feature to delete property is found within the edit property page.

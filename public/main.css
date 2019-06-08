@@ -17,12 +17,31 @@ input[type = number],[type=text]{
 	width: 250px;
 }
 
+/* keeping footer always at the bottom of the page.
+sauce: https: //www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
+#page-container {
+	position: relative;
+	min-height: 85vh;
+}
+
+#content-wrap {
+	padding-bottom: 2.5rem; /* Footer height */
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;  /* Footer height */
+}
+
+
 #main-navbar{
 	background-color: rgb(55, 117, 166);
 }
 
 #logo-container-in-navbar {
-	
+
 	background-color: azure;
 }
 /*
