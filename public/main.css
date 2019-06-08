@@ -19,20 +19,12 @@ input[type = number],[type=text]{
 
 /* keeping footer always at the bottom of the page.
 sauce: https: //www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
-#page-container {
-	position: relative;
-	min-height: 85vh;
-}
 
-#content-wrap {
-	padding-bottom: 2.5rem; /* Footer height */
-}
 
 #footer {
-	position: absolute;
-	bottom: 0;
+	background-color: beige;
 	width: 100%;
-	height: 2.5rem;  /* Footer height */
+	flex: display;
 }
 
 
@@ -41,7 +33,6 @@ sauce: https: //www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belon
 }
 
 #logo-container-in-navbar {
-
 	background-color: azure;
 }
 /*
