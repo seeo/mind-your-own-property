@@ -1,5 +1,48 @@
-module.exports = (app, allModels) => {
+const multer = require('multer')
+module.exports = (app, allModels, cloudinary) => {
 
+/* adding multer configs here: */
+/*source: https: //medium.com/@TheJesseLewis/how-to-make-a-basic-html-form-file-upload-using-multer-in-an-express-node-js-app-16dac2476610 */
+const multerConfig = {
+
+    storage: multer.diskStorage({
+        //Setup where the user's file will go
+        destination: function (req, file, next) {
+            next(null, './public/photo-storage');
+        },
+
+        //Then give the file a unique name
+        filename: function (req, file, next) {
+            console.log(file);
+            const ext = file.mimetype.split('/')[1];
+            next(null, file.fieldname + '-' + Date.now() + '.' + ext);
+        }
+    }),
+
+    //A means of ensuring only images are uploaded.
+    fileFilter: function (req, file, next) {
+        if (!file) {
+            next();
+        }
+        const image = file.mimetype.startsWith('image/');
+        if (image) {
+            console.log('photo uploaded');
+            next(null, true);
+        } else {
+            console.log("file not supported");
+            //TODO:  A better message response to user on failure.
+            return next();
+        }
+    }
+};
+
+    // app.post('/add_property', multer(multerConfig).single('photo_property_upload_main'), function (req, res) {
+    //     cloudinary.uploader.upload(req.file.path, function (result) {
+    //         //save pubicid
+    //         res.send(result);
+    //         console.log("Photo sent to cloudinary's servers", result);
+    //     });
+    // });
 
     /*
      *  =========================================
@@ -32,17 +75,9 @@ module.exports = (app, allModels) => {
     const addPropertyController = require(`./controllers/property/addPropertyController`)(allModels);
     app.get(`/add_property`, addPropertyController.addPropertyRequestHandler);
     //once property is added via the add_property form, and click submit, the user is redirected to home page
-    app.post(`/add_property`, addPropertyController.addPropertyControllerCallback);
-
-    /* setting the route for multer uploads here...  */
-    //in the new folder, the file name wil be what you specified...
-    // app.post(`/add_property`, upload.single('photo_property_upload_main'), function (req, res) {
-    //     cloudinary.uploader.upload(req.file.path, function (result) {
-    //         //to save pubicid
-    //         res.send(result);
-    //     });
-    // });
-
+    app.post(   `/add_property`,
+                multer(multerConfig).single('photo_property_upload_main'),
+                addPropertyController.addPropertyControllerCallback);
 
     const viewPropertyController = require(`./controllers/property/viewPropertyController`)(allModels);
     app.get(`/property/:id`, viewPropertyController.viewPropertyControllerCallback);

@@ -7,7 +7,7 @@ class EditProperty extends React.Component {
         let propertyId = this.props.house[0].id;
         let name = this.props.house[0].name;
         let address = this.props.house[0].address;
-        let photo = this.props.house[0].photo_url;
+        let photo = this.props.house[0].test_url;
         let rental_mth = this.props.house[0].rental_mth;
         let day_credit = this.props.house[0].day_credit;
         let bank_name = this.props.house[0].bank_name;
@@ -18,13 +18,13 @@ class EditProperty extends React.Component {
 
         return (<Layout title = "MYOP - Edit Property">
             <h3>Edit your property</h3>
-            <form method = "POST" action = {actionAttributePut}>
+            <form enctype="multipart/form-data" method = "POST" action = {actionAttributePut}>
                 <h5>Name</h5>
                     <input type = "text" name = "name" defaultValue = {name} placeholder = {name}/>
                     <h5>Address</h5>
                     <input type = "text" name = "address" defaultValue = {address} placeholder = {address} />
                     <h5>Photo Url</h5>
-                    <input type = "text" name = "photo_url" defaultValue = {photo} placeholder = {photo} />
+                    <input type = "file" name= "photo_property_upload_main" defaultValue = {photo} />
                     <h5>Rental per month (S$)</h5>
                     <input type = "text" name = "rental_mth" defaultValue = {rental_mth}/>
                     <h5>Rental due every this day of the month</h5>
@@ -47,7 +47,7 @@ class EditProperty extends React.Component {
                             <input type = "submit" defaultValue = "Cancel" formAction = {actionAttributeCancel} />
                         </div>
             </form>
-            <form className = "edit-prop-delete-form-container" method = "POST" action = {actionAttributeDelete}> 
+            <form className = "edit-prop-delete-form-container" method = "POST" action = {actionAttributeDelete}>
                 <input className="btn btn-warning" type = "submit" defaultValue = "Delete this property*" />
                 <p>* WARNING: This will delete your property, and tenancy data (if any)</p>
             </form>

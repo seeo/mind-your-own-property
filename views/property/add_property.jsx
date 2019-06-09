@@ -8,7 +8,6 @@ class AddNewProperty extends React.Component {
             <form enctype="multipart/form-data" method = "POST" action = "/add_property">
                 <input type="text" name="name" placeholder="Give a name"/>
                 <input type="text" name="address" placeholder="Address of property"/>
-                <input type="text" name="photo_url" placeholder="Enter a photo url"/>
                 <input type="file" name="photo_property_upload_main"/>
                 <input type="number" name="rental_mth" placeholder="Rental/mth ($$)" />
                 <input type="number" name="day_credit" placeholder="Rent due on day of mth"/>

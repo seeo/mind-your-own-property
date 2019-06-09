@@ -1,3 +1,5 @@
+var cloudinary = require('cloudinary').v2;
+
 module.exports = (allModels) => {
     /**
      * ===========================================
@@ -6,7 +8,7 @@ module.exports = (allModels) => {
      */
 
     let editPropertyRequestHandler = (request, response) => {
-        let resultCallback; 
+        let resultCallback;
         let userIdFromCookies;
         let propertyId = parseInt(request.params.id);
             if (request.cookies.userId != undefined) {
@@ -26,32 +28,48 @@ module.exports = (allModels) => {
         allModels.editPropertyModelsObject.getProperty(resultCallback, userIdFromCookies, propertyId);
     }
     let editPropertyControllerCallback = (request, response) => {
-        let userIdFromCookies;
-        let propertyId = parseInt(request.params.id);
-        console.log("printing out the propertyId / request.params.id in edit property controller callllbackkk: ...")
-        console.log(propertyId);
-        userIdFromCookies = request.cookies.userId;
-        console.log("printing out the userIdFromCookies / request.cookies.userId in edit property controller callllbackkk: ...")
-        console.log(userIdFromCookies);
-        const data = {
-            name: request.body.name,
-            address: request.body.address,
-            photo: request.body.photo_url,
-            rental_mth: request.body.rental_mth,
-            day_credit: request.body.day_credit,
-            bank_name: request.body.bank_name,
-        };
+        console.log("HELLO EDIT PROPERTY");
 
-        const resultCallback = (result) => {
-            console.log("edit property controller starting upppp:... ");
-            console.log("printing out the result in edit prop controller: ...");
-            console.log(result);
-            //bring user to the home page and display all properties once new property is added
-            response.render('./property/view_property', {
-                house: result
-            }); 
-        };
-        allModels.editPropertyModelsObject.editProperty(data, resultCallback, userIdFromCookies, propertyId);
+        let path;
+        let photo_property_upload_main = "";
+        console.log("print out request.file here: ", request.file);
+
+        photo_property_upload_main = request.file.path;
+        console.log('photo path in edit prop here: ', photo_property_upload_main)
+        cloudinary.uploader.upload(photo_property_upload_mainm, function (error, result){
+
+                console.log("printing result of cloudinary uploader", result);
+                console.log("printing error of cloudinary uploader", error);
+                path = result.url;
+
+                let userIdFromCookies;
+                let propertyId = parseInt(request.params.id);
+                console.log("printing out the propertyId / request.params.id in edit property controller callllbackkk: ...")
+                console.log(propertyId);
+                userIdFromCookies = request.cookies.userId;
+                console.log("printing out the userIdFromCookies / request.cookies.userId in edit property controller callllbackkk: ...")
+                console.log(userIdFromCookies);
+                const data = {
+                    name: request.body.name,
+                    address: request.body.address,
+                    photo: path,
+                    rental_mth: request.body.rental_mth,
+                    day_credit: request.body.day_credit,
+                    bank_name: request.body.bank_name,
+
+                };
+
+                const resultCallback = (result) => {
+                    console.log("edit property controller starting upppp:... ");
+                    console.log("printing out the result in edit prop controller: ...");
+                    console.log(result);
+                    //bring user to the home page and display all properties once new property is added
+                    response.render('./property/view_property', {
+                        house: result
+                    });
+                };
+                allModels.editPropertyModelsObject.editProperty(data, resultCallback, userIdFromCookies, propertyId)
+            })
     };
 
     //temporarily remove the deleteProperty request handler, in future I wanna use the bootstrap modal to issue a feedback warning before the delete is properly run

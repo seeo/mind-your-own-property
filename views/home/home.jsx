@@ -1,12 +1,12 @@
 var React = require('react');
 var Layout = require('../layout');
 //tried using this package to load logo and display on home page. but can't seem to work. At least, if can't find image, the broken link icon will not show.
-// var Img = require('react-image'); 
+// var Img = require('react-image');
 
 
 
 class Home extends React.Component {
-    
+
     renderDayCredit(dateOfPayment){
         function daysToNextPayment(dateOfPayment) {
             const dateNow = new Date();
@@ -54,7 +54,7 @@ class Home extends React.Component {
                 return 'https://internet-banking.dbs.com.sg/IB/Welcome';
             case 'OCBC':
                 return 'https://internet.ocbc.com/internet-banking/';
-            case 'UOB': 
+            case 'UOB':
                 return 'https://pib.uob.com.sg/PIBLogin/Public/processPreCapture.do?keyId=lpc';
             case 'Standard Chartered':
                 return 'https://ibank.standardchartered.com.sg/nfs/login.htm';
@@ -68,13 +68,13 @@ class Home extends React.Component {
                 return 'https://www.cimbclicks.com.sg/clicks/';
             case 'ICBC':
                 return 'https://mybank.icbc.com.cn/icbc/newenperbank/perbank3/frame/frame_index.jsp';
-            default: 
+            default:
                 return '#';
         }
     }
 
     render() {
-        
+
         console.log("Creating a loop now for homeeeeee page of houses owned by userrrr/landlord..");
         let allHousesStatsArr = this.props.house.map(thisHouseStats => {
             let id = parseInt(thisHouseStats.id);
@@ -90,8 +90,8 @@ class Home extends React.Component {
                     day_credit = thisHouseStats.day_credit;
                 }
             let bank_name = thisHouseStats.bank_name;
-            
-            
+
+
                 console.log("printing out data type of day_credit: ...");
                 console.log(typeof(day_credit));
             return (
