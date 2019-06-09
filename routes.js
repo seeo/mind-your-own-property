@@ -86,7 +86,9 @@ const multerConfig = {
     //the editPropertyController has both edit and delete features
     const editPropertyController = require(`./controllers/property/editPropertyController`)(allModels);
     app.get(`/property/:id/edit`, editPropertyController.editPropertyRequestHandler);
-    app.put(`/property/:id/`, editPropertyController.editPropertyControllerCallback);
+    app.put(`/property/:id/`,
+            multer(multerConfig).single('photo_property_upload_main'),
+            editPropertyController.editPropertyControllerCallback);
 
     //for now, when building the delete feature, am going to build w/o warning feedback to user, just to test if the delete from database works
     // app.get(`/property/:id/delete`, editPropertyController.deletePropertyRequestHandler);

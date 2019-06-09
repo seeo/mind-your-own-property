@@ -80,6 +80,7 @@ class Home extends React.Component {
             let id = parseInt(thisHouseStats.id);
             let name = thisHouseStats.name;
             let address = thisHouseStats.address;
+
             let photo = thisHouseStats.photo_url;
             let rental_mth = thisHouseStats.rental_mth;
             let day_credit;

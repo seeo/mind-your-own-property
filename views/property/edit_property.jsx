@@ -24,7 +24,8 @@ class EditProperty extends React.Component {
                     <h5>Address</h5>
                     <input type = "text" name = "address" defaultValue = {address} placeholder = {address} />
                     <h5>Photo Url</h5>
-                    <input type = "file" name= "photo_property_upload_main" defaultValue = {photo} />
+                    <input type="file" name="photo_property_upload_main" defaultValue={photo} />
+                    <h5>{photo}</h5>
                     <h5>Rental per month (S$)</h5>
                     <input type = "text" name = "rental_mth" defaultValue = {rental_mth}/>
                     <h5>Rental due every this day of the month</h5>

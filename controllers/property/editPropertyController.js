@@ -32,11 +32,13 @@ module.exports = (allModels) => {
 
         let path;
         let photo_property_upload_main = "";
+        console.log("print out request here: ", request.body);
+
         console.log("print out request.file here: ", request.file);
 
         photo_property_upload_main = request.file.path;
         console.log('photo path in edit prop here: ', photo_property_upload_main)
-        cloudinary.uploader.upload(photo_property_upload_mainm, function (error, result){
+        cloudinary.uploader.upload(photo_property_upload_main, function (error, result){
 
                 console.log("printing result of cloudinary uploader", result);
                 console.log("printing error of cloudinary uploader", error);
@@ -56,7 +58,6 @@ module.exports = (allModels) => {
                     rental_mth: request.body.rental_mth,
                     day_credit: request.body.day_credit,
                     bank_name: request.body.bank_name,
-
                 };
 
                 const resultCallback = (result) => {
