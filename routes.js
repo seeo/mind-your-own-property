@@ -6,7 +6,7 @@ module.exports = (app, allModels) => {
      *  =========================================
      *  =========================================
      *  =========================================
-     *    ALL ROUTES FOR POKEMON CONTROLLER
+     *    ALL ROUTES FOR MYOP CONTROLLER
      *  =========================================
      *  =========================================
      *  =========================================
@@ -33,6 +33,16 @@ module.exports = (app, allModels) => {
     app.get(`/add_property`, addPropertyController.addPropertyRequestHandler);
     //once property is added via the add_property form, and click submit, the user is redirected to home page
     app.post(`/add_property`, addPropertyController.addPropertyControllerCallback);
+
+    /* setting the route for multer uploads here...  */
+    //in the new folder, the file name wil be what you specified...
+    // app.post(`/add_property`, upload.single('photo_property_upload_main'), function (req, res) {
+    //     cloudinary.uploader.upload(req.file.path, function (result) {
+    //         //to save pubicid
+    //         res.send(result);
+    //     });
+    // });
+
 
     const viewPropertyController = require(`./controllers/property/viewPropertyController`)(allModels);
     app.get(`/property/:id`, viewPropertyController.viewPropertyControllerCallback);

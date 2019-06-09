@@ -2,6 +2,15 @@ const express = require('express');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 
+/* adding multer configs here:   */
+const multer = require('multer');
+//multer will create a new folder
+const upload = multer({ dest: './uploads/' });
+
+//load cloudinary v2 module at index.js
+const cloudinary = require('cloudinary').v2;
+
+
 /**
  * ===================================
  * Configurations and set up

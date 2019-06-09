@@ -76,6 +76,7 @@ class ViewProperty extends React.Component {
             let name = thisHouseStats.name;
             let address = thisHouseStats.address;
             let photo = thisHouseStats.photo_url;
+            let photo_property_upload_main = thisHouseStats.photo_property_upload_main;
             let rental_mth = thisHouseStats.rental_mth;
             let day_credit;
             //just for asthetics purpose, we put a zero in front of the number if it is a single digit;
@@ -100,13 +101,14 @@ class ViewProperty extends React.Component {
                         <div className="view-prop-buttons-container" id="test-card-img-4">
                             <h4 className = "card-title">{name}</h4>
                             <a href = {`/property/${id}/edit`} className = "btn btn-secondary">Edit</a>
-                            <a href = {`/`} className="btn btn-secondary">Back</a> 
+                            <a href = {`/`} className="btn btn-secondary">Back</a>
                         </div>
                         <h5>Address: {address}</h5>
                         <h5>Rental per month (S$): {rental_mth}</h5>
                         <h5>Rent due every this day (of the month): {day_credit}</h5>
                         <h5>Days to next payment: {this.renderDayCredit(day_credit)}</h5>
                         <h5>Rent credited into: <a href={this.renderCreditIntoBankSwitch(bank_name)} target="_blank">{bank_name}</a></h5>
+                        <img src = {photo_property_upload_main} alt = "property's uploaded image" />
                     </div>
                 </div>
             );

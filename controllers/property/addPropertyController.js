@@ -1,4 +1,4 @@
-module.exports = (allModels) => {
+module.exports = (allModels, cloudinary) => {
     /**
      * ===========================================
      * Controller logic
@@ -23,7 +23,8 @@ module.exports = (allModels) => {
             rental_mth: request.body.rental_mth,
             day_credit: request.body.day_credit,
             bank_name: request.body.bank_name,
-            user_id: request.cookies.userId
+            user_id: request.cookies.userId,
+            public_id: request.body.public_id,
         };
 
         const resultCallback = (result) => {
