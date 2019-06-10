@@ -23,12 +23,21 @@ module.exports = (allModels) => {
         console.log("HELLO ADD PROPERTY");
         let path;
         let photo_property_upload_main = "";
-        //const public_id;
+        //TODO: const public_id;
 
         photo_property_upload_main = request.file.path;
 
         console.log('photo path in add prop', photo_property_upload_main)
-        cloudinary.uploader.upload(photo_property_upload_main, function(error, result){
+        cloudinary.uploader.upload(
+            //file_path name here:
+            photo_property_upload_main,
+            /*options here, where I define that picture should be saved inside a folder, and keep original filename*/
+            {
+                folder: 'myop-express',
+                use_filename: true,
+            },
+            //callback function here where I define what to do with the data input into the form.
+            function(error, result){
             console.log("printing result of cloudinary uploader", result);
             console.log("printing error of cloudinary uploader", error);
             path = result.url;
