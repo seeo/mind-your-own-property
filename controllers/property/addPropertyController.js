@@ -28,6 +28,7 @@ module.exports = (allModels) => {
         photo_property_upload_main = request.file.path;
 
         console.log('photo path in add prop', photo_property_upload_main)
+
         cloudinary.uploader.upload(
             //file_path name here:
             photo_property_upload_main,

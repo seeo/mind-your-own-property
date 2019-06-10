@@ -33,13 +33,23 @@ module.exports = (allModels) => {
 
         let path;
         let photo_property_upload_main = "";
+        //TODO: const public_id;
+
         console.log("print out request here: ", request.body);
 
         console.log("print out request.file here: ", request.file);
 
         photo_property_upload_main = request.file.path;
+
         console.log('photo path in edit prop here: ', photo_property_upload_main)
-        cloudinary.uploader.upload(photo_property_upload_main, function (error, result){
+
+        cloudinary.uploader.upload(
+            photo_property_upload_main,
+             {
+                 folder: 'myop-express',
+                 use_filename: true,
+             },
+            function (error, result){
 
                 console.log("printing result of cloudinary uploader", result);
                 console.log("printing error of cloudinary uploader", error);
