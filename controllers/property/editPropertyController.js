@@ -80,7 +80,11 @@ module.exports = (allModels) => {
                         house: result
                     });
                 };
-                allModels.editPropertyModelsObject.editProperty(data, resultCallback, userIdFromCookies, propertyId)
+                allModels.editPropertyModelsObject.editProperty(
+                    data,
+                    resultCallback,
+                    userIdFromCookies,
+                    propertyId)
             })
     };
 

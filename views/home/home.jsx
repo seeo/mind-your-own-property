@@ -74,7 +74,6 @@ class Home extends React.Component {
     }
 
     render() {
-
         console.log("Creating a loop now for homeeeeee page of houses owned by userrrr/landlord..");
         let allHousesStatsArr = this.props.house.map(thisHouseStats => {
             let id = parseInt(thisHouseStats.id);

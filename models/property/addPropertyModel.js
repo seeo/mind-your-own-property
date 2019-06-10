@@ -16,7 +16,19 @@ module.exports = (dbPoolInstance) => {
                         //data.public_id,
                         data.photo_property_upload_main,
                     ];
-        let queryString = `INSERT INTO properties (name, address, photo_url, rental_mth, day_credit, bank_name, user_id, test_url) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *;`;
+        let queryString = `INSERT INTO properties
+                            (   name,
+                                address,
+                                photo_url,
+                                rental_mth,
+                                day_credit,
+                                bank_name,
+                                user_id,
+                                test_url
+                            )
+                            VALUES
+                            ($1,$2,$3,$4,$5,$6,$7,$8)
+                            RETURNING *;`;
 
         dbPoolInstance.query(queryString, values, (error, result) => {
             if (error) {
