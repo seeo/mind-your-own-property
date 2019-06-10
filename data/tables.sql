@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS properties (
     name TEXT,
     address TEXT,
     photo_url TEXT,
-    rental_mth MONEY, 
+    rental_mth MONEY,
     day_credit INTEGER,
     bank_name TEXT,
+		test_url  TEXT,
     user_id INTEGER
 );

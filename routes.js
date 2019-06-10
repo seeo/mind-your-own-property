@@ -75,9 +75,9 @@ const multerConfig = {
     const addPropertyController = require(`./controllers/property/addPropertyController`)(allModels);
     app.get(`/add_property`, addPropertyController.addPropertyRequestHandler);
     //once property is added via the add_property form, and click submit, the user is redirected to home page
-    app.post(   `/add_property`,
-                multer(multerConfig).single('photo_property_upload_main'),
-                addPropertyController.addPropertyControllerCallback);
+    app.post(`/add_property`,
+            multer(multerConfig).single('photo_property_upload_main'),
+            addPropertyController.addPropertyControllerCallback);
 
     const viewPropertyController = require(`./controllers/property/viewPropertyController`)(allModels);
     app.get(`/property/:id`, viewPropertyController.viewPropertyControllerCallback);
