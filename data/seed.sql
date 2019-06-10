@@ -23,7 +23,7 @@ INSERT into
   properties (name, address, photo_url, rental_mth, day_credit, bank_name, user_id)
 VALUES
   (	'Estuary',
-		'Yishun',
+		'Yishun Avenue 1, 769130,',
 		'https://www.asiaone.com/sites/default/files/health/20150708_Estuary_LW_0_0.jpg',
 		2000,
 		10,
@@ -34,7 +34,7 @@ INSERT into
   properties (name, address, photo_url, rental_mth, day_credit, bank_name, user_id)
 VALUES
   (	'Glendale Park',
-    'Hillview',
+    '21 Hillview Ave, Singapore 669618',
     'https://glendalepark.sg/a/2549/img/mo-glendalepark.jpg',
     2700,
     5,
