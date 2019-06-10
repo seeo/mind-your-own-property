@@ -1,3 +1,6 @@
+var cloudinary = require('cloudinary').v2;
+//require cloudinary npm package above so that we can call on the uploader method
+
 module.exports = (allModels) => {
     /**
      * ===========================================

@@ -7,7 +7,7 @@ class EditProperty extends React.Component {
         let propertyId = this.props.house[0].id;
         let name = this.props.house[0].name;
         let address = this.props.house[0].address;
-        let photo = this.props.house[0].test_url;
+        let photo = this.props.house[0].photo_url;
         let rental_mth = this.props.house[0].rental_mth;
         let day_credit = this.props.house[0].day_credit;
         let bank_name = this.props.house[0].bank_name;

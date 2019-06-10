@@ -75,7 +75,7 @@ class ViewProperty extends React.Component {
             let id = parseInt(thisHouseStats.id);
             let name = thisHouseStats.name;
             let address = thisHouseStats.address;
-            let path = thisHouseStats.test_url;
+            let photo = thisHouseStats.photo_url;
             let rental_mth = thisHouseStats.rental_mth;
             let day_credit;
             //just for asthetics purpose, we put a zero in front of the number if it is a single digit;
@@ -95,7 +95,7 @@ class ViewProperty extends React.Component {
 
             return (
                 <div className = "card bg-dark text-white" stylename = {"width: 18rem;"}>
-                    <img className="card-img" src = {path} alt = "Property's uploaded image" />
+                    <img className="card-img" src = {photo} alt = "Property's uploaded image" />
                     <div className="card-img-overlay" id = "view-prop-dark-overlay">
                         <div className="view-prop-buttons-container" id="test-card-img-4">
                             <h4 className = "card-title">{name}</h4>
