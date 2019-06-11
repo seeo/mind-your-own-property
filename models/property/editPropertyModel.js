@@ -24,8 +24,22 @@ module.exports = (dbPoolInstance) => {
 
     let editProperty = (data, callback, userIdFromCookies, propertyId) => {
         // [data.name, data.address, data.photo, data.rental_mth, data.day_credit, data.bank_name];
-        let queryString =   `UPDATE properties
-                            SET name = '${data.name}',
+        let queryString;
+        console.log("printing out data.photo in edit property model:  ", data.photo);
+        //check if user did upload a cloudinary photo..., if did not then it will be an empty string
+        if (data.photo === " "){
+            queryString =   `UPDATE properties SET
+                            name = '${data.name}',
+                            address = '${data.address}',
+                            rental_mth = '${data.rental_mth}',
+                            day_credit = '${data.day_credit}',
+                            bank_name = '${data.bank_name}'
+                            WHERE properties.user_id='${userIdFromCookies}'
+                            AND properties.id='${propertyId}'
+                            RETURNING *;`;
+        }else{
+            queryString =   `UPDATE properties SET
+                            name = '${data.name}',
                             address = '${data.address}',
                             photo_url = '${data.photo}',
                             rental_mth = '${data.rental_mth}',
@@ -34,9 +48,7 @@ module.exports = (dbPoolInstance) => {
                             WHERE properties.user_id='${userIdFromCookies}'
                             AND properties.id='${propertyId}'
                             RETURNING *;`;
-        // ORDER BY id ASC
-        // let queryString = `UPDATE properties SET (name, address, photo_url, rental_mth, day_credit, bank_name) = ('${data.name}', '${data.address}', '${data.photo}', '${data.rental_mth}', ${data.day_credit}, '${data.bank_name}') WHERE properties.user_id='${userIdFromCookies}' AND properties.id='${propertyId}' RETURNING *;`;
-        // let queryString = `UPDATE properties SET (name, address, photo_url, rental_mth, day_credit, bank_name) = VALUES ($1,$2,$3,$4,$5,$6) WHERE properties.user_id='${userIdFromCookies}' AND properties.id='${propertyId}' RETURNING *;`;
+        }
 
         dbPoolInstance.query(queryString, (error, result) => {
             if (error) {

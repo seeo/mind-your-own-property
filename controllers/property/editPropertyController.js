@@ -22,7 +22,7 @@ module.exports = (allModels) => {
                     response.render('./property/edit_property', {house: result});
                 };
                 }else{
-                //please log in
+                //user please log in
                 console.log("user not logged in at addProp controller, no cookies detected, redirecting to login page");
                 response.redirect('/login');
             }
@@ -30,37 +30,16 @@ module.exports = (allModels) => {
     }
     let editPropertyControllerCallback = (request, response) => {
         console.log("HELLO EDIT PROPERTY");
-
         let path;
         let photo_property_upload_main = "";
-
-        if(!request.file){
-            path = "https://res.cloudinary.com/dp4soym81/image/upload/v1560229311/myop-express/default_house_image_qzqdj4.jpg";
-        }else{
-            photo_property_upload_main = request.file.path;
-        }
-
-        //TODO: const public_id;
-
-        // if(request.file !== undefined){
-        //     console.log("print out request here: ", request.body);
-        //     console.log("print out request.file here: ", request.file);
-        // }
-
-
-        // if(request.file === undefined){//if we DO NOT upload an image, then this path will NOT exist and...
-        //     console.log("printing out the no request.file.path case");
-        //     //photo_property_upload_main = "../../public/photo-storage/default_house_image.jpg";
-        //     photo_property_upload_main = "../../public/images/default_house_image.jpg";
-        // }else{//otherwise, if we DO upload an image, then this path WILL exist, then...
-        //     photo_property_upload_main = request.file.path;
-        //     console.log("request inside if statement: ", request);
-        //     console.log("request.file inside if statement: ", request.file);
-        //     console.log("request.file.path inside if statement: ", request.file.path);
-        // }
-
-        console.log('photo path in edit prop here: ', photo_property_upload_main)
-
+        //multer comes in here...
+            if(!request.file){
+                /* if request.file does not exist, then string continues to be empty */
+                photo_property_upload_main;
+            }else{
+                photo_property_upload_main = request.file.path;
+            }
+        console.log('photo path in edit prop here: ', photo_property_upload_main);
         cloudinary.uploader.upload(
             photo_property_upload_main,
              {
@@ -68,16 +47,13 @@ module.exports = (allModels) => {
                  use_filename: true,
              },
             function (error, result){
-
                 console.log("printing result of cloudinary uploader", result);
                 console.log("printing error of cloudinary uploader", error);
-
-                if (!request.file) {
-                    path;
-                }else{
-                    path = result.url;
-                }
-
+                    if (!request.file) {
+                        path = " ";
+                    }else{
+                        path = result.url;
+                    }
                 let userIdFromCookies;
                 let propertyId = parseInt(request.params.id);
                 console.log("printing out the propertyId / request.params.id in edit property controller callllbackkk: ...")
@@ -85,7 +61,7 @@ module.exports = (allModels) => {
                 userIdFromCookies = request.cookies.userId;
                 console.log("printing out the userIdFromCookies / request.cookies.userId in edit property controller callllbackkk: ...")
                 console.log(userIdFromCookies);
-                const data = {
+                let data = {
                     name: request.body.name,
                     address: request.body.address,
                     photo: path,
@@ -103,6 +79,7 @@ module.exports = (allModels) => {
                         house: result
                     });
                 };
+                console.log("data from edit property controller", data);
                 allModels.editPropertyModelsObject.editProperty(
                     data,
                     resultCallback,

@@ -98,7 +98,14 @@ class ViewProperty extends React.Component {
                     <img className="card-img" src = {photo} alt = "Property's uploaded image" />
                     <div className="card-img-overlay" id = "view-prop-dark-overlay">
                         <div className="view-prop-buttons-container" id="test-card-img-4">
-                            <h4 className = "card-title">{name}</h4>
+                            <h4
+                                className = "card-title"
+                                style = {{  fontWeight: 'bold',
+                                            letterSpacing: '0.05em',
+                                        }}
+                            >
+                                {name}
+                            </h4>
                             <a href = {`/property/${id}/edit`} className = "btn btn-secondary">Edit</a>
                             <a href = {`/`} className="btn btn-secondary">Back</a>
                         </div>
@@ -107,7 +114,7 @@ class ViewProperty extends React.Component {
                         <h5>Rent due every this day (of the month): {day_credit}</h5>
                         <h5>Days to next payment: {this.renderDayCredit(day_credit)}</h5>
                         <h5>Rent credited into:
-                            <a href={this.renderCreditIntoBankSwitch(bank_name)} target="_blank">{bank_name}</a>
+                            <a href={this.renderCreditIntoBankSwitch( bank_name)} target="_blank">{ bank_name}</a>
                         </h5>
                     </div>
                 </div>

@@ -25,12 +25,17 @@ module.exports = (allModels) => {
         let photo_property_upload_main = "";
         //TODO: const public_id;
 
-        photo_property_upload_main = request.file.path;
+        if (!request.file) {
+            path = "https://res.cloudinary.com/dp4soym81/image/upload/v1560229311/myop-express/default_house_image_qzqdj4.jpg";
+        } else {
+            photo_property_upload_main = request.file.path;
+        }
 
         console.log('photo path in add prop', photo_property_upload_main)
 
         cloudinary.uploader.upload(
-            //file_path name here:
+            /* file_path name here:
+            cloudinary is able to accept an empty string */
             photo_property_upload_main,
             /*options here, where I define that picture should be saved inside a folder, and keep original filename*/
             {
@@ -41,7 +46,11 @@ module.exports = (allModels) => {
             function(error, result){
             console.log("printing result of cloudinary uploader", result);
             console.log("printing error of cloudinary uploader", error);
-            path = result.url;
+            if (!request.file) {
+                path;
+            } else {
+                path = result.url;
+            }
 
             const data = {
                 name: request.body.name,
