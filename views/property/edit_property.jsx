@@ -16,6 +16,8 @@ class EditProperty extends React.Component {
         let actionAttributeCancel = `/property/${propertyId}?_method=GET`;
         let actionAttributeDelete = `/property/${propertyId}?_method=DELETE`;
 
+        //<p>current file path: {photo} </p>
+
         return (<Layout title = "MYOP - Edit Property">
             <h3>Edit your property</h3>
             <form enctype="multipart/form-data" method = "POST" action = {actionAttributePut}>
@@ -25,7 +27,7 @@ class EditProperty extends React.Component {
                     <input type = "text" name = "address" defaultValue = {address} placeholder = {address} />
                     <h5>Photo Url</h5>
                     <input type="file" name="photo_property_upload_main" defaultValue={photo} />
-                    <p>current file path: {photo} </p>
+
                     <h5>Rental per month (S$)</h5>
                     <input type = "text" name = "rental_mth" defaultValue = {rental_mth}/>
                     <h5>Rental due every this day of the month</h5>
