@@ -111,6 +111,5 @@ module.exports = {
     viewPropertyModelsObject,
     editPropertyModelsObject,
     // logoutModelsObject
-    //this part is not required for my project, but just keeping here for now
-        // tweedModelsObject: tweedModelsObject
+
 };

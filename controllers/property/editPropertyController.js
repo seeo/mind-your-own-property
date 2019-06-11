@@ -35,11 +35,22 @@ module.exports = (allModels) => {
         let photo_property_upload_main = "";
         //TODO: const public_id;
 
-        console.log("print out request here: ", request.body);
+        if(request.file !== undefined){
+            console.log("print out request here: ", request.body);
+            console.log("print out request.file here: ", request.file);
+        }
 
-        console.log("print out request.file here: ", request.file);
 
-        photo_property_upload_main = request.file.path;
+        if(request.file === undefined){//if we DO NOT upload an image, then this path will NOT exist and...
+            console.log("printing out the no request.file.path case");
+            //photo_property_upload_main = "../../public/photo-storage/default_house_image.jpg";
+            photo_property_upload_main = "../../public/images/default_house_image.jpg";
+        }else{//otherwise, if we DO upload an image, then this path WILL exist, then...
+            photo_property_upload_main = request.file.path;
+            console.log("request inside if statement: ", request);
+            console.log("request.file inside if statement: ", request.file);
+            console.log("request.file.path inside if statement: ", request.file.path);
+        }
 
         console.log('photo path in edit prop here: ', photo_property_upload_main)
 

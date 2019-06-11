@@ -93,4 +93,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#Ignore the photos I have inside photo-storage folder
 /public/photo-storage
+#But do not ignore this exact photo that I have inside the photo-storage folder
+!/public/photo-storage/default_house_image.jpg
