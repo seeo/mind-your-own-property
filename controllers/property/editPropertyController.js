@@ -33,24 +33,31 @@ module.exports = (allModels) => {
 
         let path;
         let photo_property_upload_main = "";
+
+        if(!request.file){
+            path = "https://res.cloudinary.com/dp4soym81/image/upload/v1560229311/myop-express/default_house_image_qzqdj4.jpg";
+        }else{
+            photo_property_upload_main = request.file.path;
+        }
+
         //TODO: const public_id;
 
-        if(request.file !== undefined){
-            console.log("print out request here: ", request.body);
-            console.log("print out request.file here: ", request.file);
-        }
+        // if(request.file !== undefined){
+        //     console.log("print out request here: ", request.body);
+        //     console.log("print out request.file here: ", request.file);
+        // }
 
 
-        if(request.file === undefined){//if we DO NOT upload an image, then this path will NOT exist and...
-            console.log("printing out the no request.file.path case");
-            //photo_property_upload_main = "../../public/photo-storage/default_house_image.jpg";
-            photo_property_upload_main = "../../public/images/default_house_image.jpg";
-        }else{//otherwise, if we DO upload an image, then this path WILL exist, then...
-            photo_property_upload_main = request.file.path;
-            console.log("request inside if statement: ", request);
-            console.log("request.file inside if statement: ", request.file);
-            console.log("request.file.path inside if statement: ", request.file.path);
-        }
+        // if(request.file === undefined){//if we DO NOT upload an image, then this path will NOT exist and...
+        //     console.log("printing out the no request.file.path case");
+        //     //photo_property_upload_main = "../../public/photo-storage/default_house_image.jpg";
+        //     photo_property_upload_main = "../../public/images/default_house_image.jpg";
+        // }else{//otherwise, if we DO upload an image, then this path WILL exist, then...
+        //     photo_property_upload_main = request.file.path;
+        //     console.log("request inside if statement: ", request);
+        //     console.log("request.file inside if statement: ", request.file);
+        //     console.log("request.file.path inside if statement: ", request.file.path);
+        // }
 
         console.log('photo path in edit prop here: ', photo_property_upload_main)
 
@@ -64,7 +71,12 @@ module.exports = (allModels) => {
 
                 console.log("printing result of cloudinary uploader", result);
                 console.log("printing error of cloudinary uploader", error);
-                path = result.url;
+
+                if (!request.file) {
+                    path;
+                }else{
+                    path = result.url;
+                }
 
                 let userIdFromCookies;
                 let propertyId = parseInt(request.params.id);
