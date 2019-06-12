@@ -30,24 +30,24 @@ class Layout extends React.Component {
 
                             <div className="collapse navbar-collapse" id = "navbar-supported-content">
                                 <ul className="navbar-nav" id = "navbar-home-to-aboutus">
-                                    <li className="nav-item">
+                                    {/*<li className="nav-item">
                                         <a className="nav-link" href="/">Home</a>
-                                    </li>
+                                        </li> */}
                                     <li>
                                         <div className = "nav-item dropdown">
                                             <a className="nav-link dropdown-toggle" href="#" id="navbar-add-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add</a>
                                             <div className="dropdown-menu" aria-labelledby="navbar-add-dropdown">
                                                 <a className="dropdown-item" href="/add_property">new property</a>
+                                                {/*<div className="dropdown-divider"></div>
+                                                <a className="dropdown-item disabled" href="#">new tenant</a>
                                                 <div className="dropdown-divider"></div>
-                                                <a className="dropdown-item" href="#">new tenant</a>
+                                                <a className="dropdown-item disabled" href="#">new agent</a>
                                                 <div className="dropdown-divider"></div>
-                                                <a className="dropdown-item" href="#">new agent</a>
-                                                <div className="dropdown-divider"></div>
-                                                <a className="dropdown-item" href="#">new transaction</a>
+                                                <a className="dropdown-item disabled" href="#">new transaction</a>  */}
                                             </div>
                                         </div>
                                     </li>
-                                    <li className="nav-item">
+                                    {/*<li className="nav-item">
                                         <a className="nav-link" href="#">Portfolio Overview</a>
                                     </li>
                                     <li className="nav-item">
@@ -55,7 +55,7 @@ class Layout extends React.Component {
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="#">About us</a>
-                                    </li>
+                                    </li> */}
                                 </ul>
 
                                 <div className="nav-item dropdown" id="navbar-user-account-container">
@@ -63,9 +63,9 @@ class Layout extends React.Component {
                                         Account&nbsp; <img src="https://img.icons8.com/cotton/64/000000/gender-neutral-user--v2.png"/>
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbar-account-dropdown">
-                                        <a className="dropdown-item" href="#">Profile</a>
+                                        {/*<a className="dropdown-item" href="#">Profile</a>
                                         <a className="dropdown-item" href="#">Settings</a>
-                                        <div className="dropdown-divider"></div>
+                                        <div className="dropdown-divider"></div> */}
                                         <a className="dropdown-item" href="/logout">Logout</a>
                                     </div>
                                 </div>

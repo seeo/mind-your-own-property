@@ -14,7 +14,7 @@ module.exports = (dbPoolInstance) => {
                         data.bank_name,
                         data.user_id,
                         //data.public_id,
-                        data.photo_property_upload_main,
+
                     ];
         let queryString = `INSERT INTO properties
                             (   name,
@@ -24,10 +24,10 @@ module.exports = (dbPoolInstance) => {
                                 day_credit,
                                 bank_name,
                                 user_id,
-                                test_url
+
                             )
                             VALUES
-                            ($1,$2,$3,$4,$5,$6,$7,$8)
+                            ($1,$2,$3,$4,$5,$6,$7)
                             RETURNING *;`;
 
         dbPoolInstance.query(queryString, values, (error, result) => {
