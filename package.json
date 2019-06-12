@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+		"start": "node index.js",
+		"seed_default_property": "node data/default_property_seed.js"
   },
   "engines": {
     "node": "^9.8.0"
