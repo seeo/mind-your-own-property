@@ -24,7 +24,7 @@ INSERT into
 VALUES
   (	'Estuary',
 		'Yishun Avenue 1, 769130,',
-		'https://www.asiaone.com/sites/default/files/health/20150708_Estuary_LW_0_0.jpg',
+		'https://res.cloudinary.com/dp4soym81/image/upload/v1560318821/myop-express/photo_property_upload_main-1560318818975_eoj0pt.jpg',
 		2000,
 		10,
 		'OCBC',
