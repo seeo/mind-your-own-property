@@ -21,33 +21,33 @@ class EditProperty extends React.Component {
         return (<Layout title = "MYOP - Edit Property">
             <h3>Edit your property</h3>
             <form enctype="multipart/form-data" method = "POST" action = {actionAttributePut}>
-                <h5>Name</h5>
-                    <input type = "text" name = "name" defaultValue = {name} placeholder = {name}/>
-                    <h5>Address</h5>
-                    <input type = "text" name = "address" defaultValue = {address} placeholder = {address} />
-                    <h5>Photo Url</h5>
+                <h6>Name</h6>
+                    <input type="text" className="form-control" name = "name" defaultValue = {name} placeholder = {name}/>
+                <h6>Address</h6>
+                    <input type="text" className="form-control" name = "address" defaultValue = {address} placeholder = {address} />
+                <h6>Upload image</h6>
                     <input type="file" name="photo_property_upload_main" defaultValue={photo} />
-
-                    <h5>Rental per month (S$)</h5>
-                    <input type = "text" name = "rental_mth" defaultValue = {rental_mth}/>
-                    <h5>Rental due every this day of the month</h5>
-                    <input type = "number" name = "day_credit" defaultValue = {day_credit}/>
-                    <h5>Rent gets credited into bank</h5>
-                    <input type = "text" list = "banks" name = "bank_name" defaultValue = {bank_name} placeholder = {bank_name} />
+                <h6>Rental per month (S$)</h6>
+                    <input type="text" className="form-control" name = "rental_mth" defaultValue = {rental_mth}/>
+                <h6>Rental due every this day of the month</h6>
+                    <input type="number" className="form-control" name = "day_credit" defaultValue = {day_credit}/>
+                <h6>Rent gets credited into bank</h6>
+                    <select className="form-control" id="banks-dropdown" list="banks" name="bank_name" placeholder="Bank where rent gets credited">
                         <datalist id="banks">
-                            <option>DBS / POSB</option>
-                            <option>OCBC</option>
-                            <option>UOB</option>
-                            <option>Standard Chartered</option>
-                            <option>Citibank</option>
-                            <option>HSBC</option>
-                            <option>Maybank</option>
-                            <option>CIMB</option>
-                            <option>ICBC</option>
+                            <option value="DBS / POSB">DBS / POSB</option>
+                            <option value="OCBC">OCBC</option>
+                            <option value="UOB">UOB</option>
+                            <option value="Standard Chartered">Standard Chartered</option>
+                            <option value="Citibank">Citibank</option>
+                            <option value="HSBC">HSBC</option>
+                            <option value="Maybank">Maybank</option>
+                            <option value="CIMB">CIMB</option>
+                            <option value="ICBC">ICBC</option>
                         </datalist>
+                    </select>
                         <div className= "edit-prop-form-buttons-container">
-                            <input type = "submit" defaultValue = "Submit" />
-                            <input type = "submit" defaultValue = "Cancel" formAction = {actionAttributeCancel} />
+                            <input type="submit" className="btn btn-primary" defaultValue = "Submit" />
+                            <input type="submit" className="btn btn-primary" defaultValue = "Cancel" formAction = {actionAttributeCancel} />
                         </div>
             </form>
             <form className = "edit-prop-delete-form-container" method = "POST" action = {actionAttributeDelete}>

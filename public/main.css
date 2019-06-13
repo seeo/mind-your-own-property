@@ -17,6 +17,11 @@ input[type = number],[type=text], [type=password], [type=email]{
 	width: 250px;
 }
 
+#banks-dropdown{
+	margin-bottom: 25px;
+	width: 250px;
+}
+
 /* keeping footer always at the bottom of the page.
 sauce: https: //www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
 #page-container {
@@ -102,11 +107,12 @@ sauce: https: //www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belon
 .add-prop-button-container input, h6{
 	display: inline;
 	margin-right: 30px;
+
 }
 
 .edit-prop-form-buttons-container input{
 	display: inline;
-	margin-right: 30px;
+	margin-right: 25px;
 }
 
 .edit-prop-delete-form-container p {
